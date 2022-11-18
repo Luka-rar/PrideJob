@@ -100,20 +100,12 @@
     <script src="{{asset ('site/bootstrap.js') }}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--Sobre Nós-->
+      <h2 class="text-center">Conheça a pride job</h2>
 </body>
 <!--Informações do Footer-->
   <footer>
     <div class="container" id="footer1">
-      <div class= "sec abouts">
-        <h2 class="text-title fw-bold">Sobre nós</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium amet, quos ut iusto id expedita nemo, eveniet quod similique aspernatur, tenetur deleniti at molestias! Reprehenderit beatae soluta harum provident!</p>
-        <ul class="sci">
-          <li><a href="https://www.facebook.com/Eteczonalesteoficial/"><i><img  src="../assets/facebook.svg" width="30px"></i></a></li>
-          <li><a href="https://twitter.com/eteczona"><i><img src="../assets/twitter.svg" width="30px"></i></a></li>
-          <li><a href="https://www.instagram.com/eteczonalesteoficial/?hl=pt-br"><i><img  src="../assets/instagram.svg" width="30px"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCLJkSgr0sLEWBqXDzXCgIPg"><i><img  src="../assets/youtube.svg" width="30px"></i></a></li>
-        </ul>
-      </div>
       <div class="sec quickLinks">
         <h2 class="text-title fw-bold">Quick Links</h2>
         <ul>
