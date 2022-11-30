@@ -19,9 +19,9 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
 Route::post('/user', [UserController::class, 'store']);
 
-Route::get('/login', function () {
-    return view('index');
-});
+// Route::get('/login', function () {
+//     return view('index');
+// });
 
 Route::get('/admin', function () {
     return view('adm.HomeAdm');
