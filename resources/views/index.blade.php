@@ -17,12 +17,12 @@
             box-sizing: border-box;
         }
         body{
-            background: rgb(219, 226, 226);
+            background: rgb(27,27,27);
         }
         .row{
-            background: white;
+            background: #2e2e2e;
             border-radius: 30px;
-            box-shadow: 12px 12px 22px grey;
+            box-shadow: 12px 12px 22px black;
         }
         img{
             border-top-left-radius: 30px;
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-5">
-                    <img src="../assets/lgbt.jpg" class="img-fluid" alt="bandeira-lgbt">
+                    <img src="{{asset('images/bandeiralgbt.jpg')}}" class="img-fluid" alt="bandeira-lgbt">
                 </div>
                 <div class="col-lg-7 px-5 pt-5" >
                     <a href="homepage.html" style="color: black;"><h1 class="font-weight-bold py-3">Pride job</h1></a>
@@ -72,12 +72,13 @@
                             </div>
                         </div>
                         <a href="#">Esqueceu a senha?</a>
-                        <p class="text-dark">Não tem uma conta? <a href="/user/create"> Inscreva-se aqui.</a></p>
+                        <p class="">Não tem uma conta? <a href="/user/create"> Inscreva-se aqui.</a></p>
                     </form>
                 </div>
             </div>
         </div>
       </section>
+      <script src="{{asset ('site/js/script.js')}}"></script>
       <script type="module" src="index.js"></script>
       <script src="{{asset ('site/jquery.js') }}"></script>
     <script src="{{asset ('site/bootstrap.js') }}"></script>

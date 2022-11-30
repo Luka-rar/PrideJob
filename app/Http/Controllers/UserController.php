@@ -20,7 +20,7 @@ class UserController extends Controller
      $user = new User; 
      $user->nome= $request->nome;
      $user->email= $request->email;
-     $user->senha= $request->senha;
+     $user->password= $request->password;
      $user->endereco= $request->endereco;
      $user->complemento= $request->complemento;
      $user->cidade= $request->cidade;

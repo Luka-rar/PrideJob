@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pride Job</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="{{ asset('site/custom.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,12 @@
             box-sizing: border-box;
         }
         body{
-            background: rgb(219, 226, 226);
+            background: rgb(27,27,27);
         }
         .row{
-            background: white;
+            background: #2e2e2e;
             border-radius: 30px;
-            box-shadow: 12px 12px 22px grey;
+            box-shadow: 12px 12px 22px black;
         }
         img{
             border-top-left-radius: 30px;
@@ -48,6 +48,9 @@
       <section class="form my-4 mx-5">
         <div class="container">
             <div class="row g-0">
+            <div class="col-lg-5">
+                    <img src="{{asset('images/bandeiralgbt.jpg')}}" class="img-fluid" alt="bandeira-lgbt">
+                </div>
                 <div class="col-lg-7 px-5 pt-5" >
                     <a href="/user" style="color: black;"><h1 class="font-weight-bold py-3">Pride job</h1></a>
                     <h4>Logue na sua conta</h4>
@@ -64,7 +67,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Senha</label>
-                                <input type="password" name="senha" class="form-control" id="inputPassword4" placeholder="Senha">
+                                <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Senha">
                             </div>
                         </div>
                         <div class="form-group">
@@ -94,6 +97,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
                     </form>
+                    <p class="text.light">Deseja criar uma conta para sua empresa? <a href="/user/cadastro.blade.php"> Inscreva-se aqui.</a></p> <!--não ta linkando(?)-->
                 </div>
             </div>
         </div>

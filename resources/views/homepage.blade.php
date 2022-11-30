@@ -6,12 +6,14 @@
     <title>Pride Job</title>
     <link rel="stylesheet" href="../scss/custom.scss">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{asset('site/custom.css')}}">
 </head>
-<body>
+<body>  
    <!--NavBar--> 
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark mt-5">
+        <nav class="navbar navbar-expand-lg navbar-dark mt-5"> 
             <div class="container-fluid">
               <a class="navbar-brand fw-bold text-primary" href="#">Pride Job</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,11 +42,11 @@
                       <li><a class="dropdown-item" href="#">Another action</a></li>
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                    @foreach($users as $user)
+                  </li>
+                  @foreach($users as $user)
                        <p>{{ $user->nome }}</p>
                      @endforeach
-                  </li>
-                </ul>
+                </ul>              
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success-primary" type="submit">Pesquisa</button>
@@ -67,7 +69,7 @@
       <div class="row">
         <div class="col-sm mt-5">
           <div class="card rellax" data-rellax-speed="4">
-            <img src="../assets/pexels-alexander-grey-1317534.jpg" class="card-img-top" alt="bandeiralgbt">
+            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
             <div class="card-body p-4 rounded-bottom">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -76,7 +78,7 @@
         </div>
         <div class="col-sm mt-5">
           <div class="card">
-            <img src="../assets/pexels-alexander-grey-1191710.jpg" class="card-img-top" alt="bandeiralgbt">
+            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
             <div class="card-body p-4 rounded-bottom">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -85,7 +87,7 @@
         </div>
         <div class="col-sm mt-5 mb-5">
           <div class="card">
-            <img src="../assets/pexels-alexander-grey-1317534.jpg" class="card-img-top" alt="bandeiralgbt">
+            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
             <div class="card-body p-4 rounded-bottom">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -95,13 +97,37 @@
         </div>
       </div>
     </div>
+<!--Sobre Nós-->
+      <div id="about-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+                <h2 class="main-title fw-semibold">Sobre a Pride Job</h2>
+            </div>
+            <div class="col-md-6 mb-5">
+                <img class="img-fluid" src="{{asset('images/bandeiralgbt.jpg')}}" alt="Pride Job">
+            </div>
+            <div class="col-md-6">
+              <h3>A sua chance de adentrar no mercado de trabalho</h3>   <!--pode mudar essa frase aq-->
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero unde ab mollitia laudantium fugit sequi doloremque deleniti harum provident illo voluptates, 
+                officia repellat dolores iure incidunt nesciunt, sint libero.</p>
+              <ul id="about-list">
+                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     <script type="module" src="index.js"></script>
-    <script src="{{asset ('site/jquery.js') }}"></script>
+    <script src="{{asset ('site/js/script.js')}}"></script>
+    <script src="{{asset ('site/jquery.js')}}"></script>
     <script src="{{asset ('site/bootstrap.js') }}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<!--Sobre Nós-->
-      <h2 class="text-center">Conheça a pride job</h2>
 </body>
 <!--Informações do Footer-->
   <footer>
@@ -139,4 +165,4 @@
   <div class="copyrightText">
     <p>Copyright © 2022 Pride Job. All Rights Reserved.</p>
   </div>
-</html>/
+</html>

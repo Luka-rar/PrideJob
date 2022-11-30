@@ -13,6 +13,11 @@ const mix = require('laravel-mix');
 
 mix
 .sass('resources/scss/custom.scss','public/site/custom.css')
+.copy('resources/img','public/images')
 
+
+.scripts(['resources/js/script.js'],'public/site/js/script.js' )
 .scripts('node_modules/jquery/dist/jquery.js','public/site/jquery.js')
 .scripts('node_modules/bootstrap/dist/js/bootstrap.bundle.js', 'public/site/bootstrap.js');
+
+//admin area
