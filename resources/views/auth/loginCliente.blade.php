@@ -53,7 +53,7 @@
                     <img src="{{asset('images/bandeiralgbt.jpg')}}" class="img-fluid" alt="bandeira-lgbt">
                 </div>
                 <div class="col-lg-7 px-5 pt-5" >
-                    <a href="" style="color: black;"><h1 class="font-weight-bold py-3">Pride job</h1></a>
+                    <a href="homepage.html" style="color: black;"><h1 class="font-weight-bold py-3">Pride job</h1></a>
                     <h4>Logue na sua conta</h4>
 
                     <x-jet-validation-errors class="mb-4 text-danger" />
@@ -63,7 +63,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('usuarios.logar') }}">
+                    <form method="POST" action="{{ route('clientes.logar') }}">
                         
                     @csrf
                     

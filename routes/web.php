@@ -12,12 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClienteController;
 use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
 Route::post('/user', [UserController::class, 'store']);
+
+// Rotas de autenticação
+//User (ADM)
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/logar', [UserController::class, 'logar'])->name('usuarios.logar');
+//Cliente
+Route::get('/cliente/login', [ClienteController::class, 'login'])->name('login');
+Route::post('/cliente/logar', [ClienteController::class, 'logar'])->name('clientes.logar');
+
 
 // Route::get('/login', function () {
 //     return view('index');
@@ -28,15 +39,38 @@ Route::get('/admin', function () {
 });
 
 Route::get('/cadastro', function () {
-    return view('user.cadastroE');
+    return view('empresa.formcadastro');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+Route::middleware(('admin'))->group(function(){
+
+    Route::get('admin', function(){
+        dd('Você é um admin');
+    });
+
+    Route::middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified'
+    ])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
+    });
 });
+
+Route::middleware(('client'))->group(function(){
+
+    Route::get('client', function(){
+        dd('Você é um client');
+    });
+});
+
+Route::middleware(('empresa'))->group(function(){
+
+    Route::get('empresa', function(){
+        dd('Você é uma empresa');
+    });
+});
+
+

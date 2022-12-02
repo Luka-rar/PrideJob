@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Cliente;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class ClienteController extends Controller
 {
     public function index(){
         $users = User::all();
@@ -19,21 +19,6 @@ class UserController extends Controller
         return view('user.create');
 
     }
-   public function store(Request $request){
-     $user = new User; 
-     $user->name= $request->name;
-     $user->email= $request->email;
-     $user->password= $request->password;
-     $user->endereco= $request->endereco;
-     $user->complemento= $request->complemento;
-     $user->cidade= $request->cidade;
-     $user->estado= "teste";
-     $user->cep= $request->cep;
-    
-     $user->save();
-     return redirect('/');
-   }
-
    public function login()
     {
         // $usuario = new User;
@@ -41,7 +26,7 @@ class UserController extends Controller
         // $usuario->email = "jeancarloscharao@gmail.com";
         // $usuario->password = Hash::make("12345678");
         // $usuario->save();
-        return view('auth.login');
+        return view('auth.loginCliente');
     }
 
    public function logar(Request $request)
@@ -55,11 +40,11 @@ class UserController extends Controller
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
-            'email' => 'As credenciais fornecidas não correspondem aos nossos registros.',
+            'email' => 'As credenciais fornecidas de cliente não correspondem aos nossos registros.',
         ])->onlyInput('email');
     }
 
@@ -67,7 +52,7 @@ class UserController extends Controller
     public function dashboard()
     {
 
-        return view('usuarios.dashboard');
+        return view('homepage');
     }
 
 

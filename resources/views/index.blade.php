@@ -55,21 +55,41 @@
                 <div class="col-lg-7 px-5 pt-5" >
                     <a href="homepage.html" style="color: black;"><h1 class="font-weight-bold py-3">Pride job</h1></a>
                     <h4>Logue na sua conta</h4>
-                    <form>
+
+                    <x-jet-validation-errors class="mb-4 text-danger" />
+
+                    @if (session('status'))
+                        <div class="mb-4 font-medium text-sm text-green-600">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('login') }}">
+                        
+                    @csrf
+                    
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Digite seu email" class="form-control my-3 p-3">
+                                <input placeholder="Digite seu email" class="form-control my-3 p-3" type="email" name="email" :value="old('email')" required autofocus>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="Digite sua senha" class="form-control my-3 p-3">
+                                <input placeholder="Digite sua senha" class="form-control my-3 p-3" type="password" name="password" required autocomplete="current-password">
                             </div>
                         </div>
                         <div class="form-row">
+                            <label for="remember_me" class="flex items-center">
+                                <x-jet-checkbox id="remember_me" name="remember" />
+                                <span class="ml-2 text-sm text-gray-600">{{ __('Lembrar') }}</span>
+                            </label>
+                        </div>
+                        <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn1 mt-3 mb-5">Entrar</button>
+                                <x-jet-button class="btn1 mt-3 mb-5">
+                                {{ __('Entrar') }}
+                                </x-jet-button>
                             </div>
+                            
                         </div>
                         <a href="#">Esqueceu a senha?</a>
                         <p class="">Não tem uma conta? <a href="/user/create"> Inscreva-se aqui.</a></p>

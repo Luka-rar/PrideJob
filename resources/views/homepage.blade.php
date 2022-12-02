@@ -27,30 +27,54 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Conheça o Pride Job</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inscreva-se</a>
-                  </li>
+                 
+                 @auth
+                 @if(Auth::user()->empresa ==1)
                   <li class="nav-item">
                     <a class="nav-link" href="#">Adicionar vaga</a>
                   </li>
+                  @endif
+                 @endauth
+                 
+                  @auth
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Candidato
+                    {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><form action="/logout" method="POST">
+                        @csrf
+                        <a href="/logout" class="dropdown-item" onclick="event.preventDefault();
+                        this.closest('form').submit();">Sair</a>
+                      </form></li>
                     </ul>
                   </li>
-                  @foreach($users as $user)
-                       <p>{{ $user->nome }}</p>
-                     @endforeach
-                </ul>              
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success-primary" type="submit">Pesquisa</button>
-                </form>
+                  @endauth
+
+                  @guest
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Login/Cadastro
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/cliente/login">Login</a></li>
+                      <li><a class="dropdown-item" href="/register">Inscreva-se</a></li>
+                    </ul>
+                  </li>
+                  @endguest
+                  @auth
+                  @if(Auth::user()->empresa ==1)
+                  <li class="nav-item">
+                    <p class="nav-link">Perfil: <span class="text-danger">empresarial</span></p>
+                  </li>
+                  @endif
+                  @if(Auth::user()->client ==1)
+                  <li class="nav-item">
+                    <p class="nav-link">Perfil: <span class="text-danger">candidato</span></p>
+                  </li>
+                  @endif
+                  @endauth
               </div>
             </div>
           </nav>

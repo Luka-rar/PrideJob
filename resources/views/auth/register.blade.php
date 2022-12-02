@@ -9,6 +9,27 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            
+            <div>
+                <label>Tipo de Conta</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="empresa" id="flexRadioDefault1" value=1>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Empresa
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="empresa" id="flexRadioDefault2" value=0>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Cliente
+                    </label>
+                </div>
+                    
+                    <input class="form-check-input" type="hidden" name="admin" id="flexRadioDefault2" value=0>
+                    <input class="form-check-input" type="hidden" name="client" id="flexRadioDefault2" value=0>
+            </div>
+
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />

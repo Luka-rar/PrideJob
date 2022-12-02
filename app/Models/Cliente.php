@@ -10,7 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Cliente extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -27,9 +27,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'empresa',
-        'client',
-        'admin'
     ];
 
     /**
