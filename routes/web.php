@@ -39,7 +39,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/cadastro', function () {
-    return view('empresa.formcadastro');
+    return view('layouts.app');
 });
 
 Route::middleware(('admin'))->group(function(){
@@ -74,3 +74,7 @@ Route::middleware(('empresa'))->group(function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
