@@ -42,7 +42,9 @@
                     {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
+                      @if(Auth::user()->client ==1)
                       <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+                      @endif
                       <li><form action="/logout" method="POST">
                         @csrf
                         <a href="/logout" class="dropdown-item" onclick="event.preventDefault();
