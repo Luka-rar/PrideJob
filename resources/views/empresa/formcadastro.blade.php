@@ -168,7 +168,7 @@
                                         Prefiro não informar
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="outros" checked>
                                     <label class="form-check-label" for="outros">
                                         Outros

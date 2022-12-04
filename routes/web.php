@@ -47,6 +47,10 @@ Route::get('/form_candidato', function () {
     return view('candidato.formcadastro');
 });
 
+Route::get('/minha_area', function () {
+    return view('candidato.minhaarea');
+});
+
 Route::middleware(('admin'))->group(function(){
 
     Route::get('admin', function(){

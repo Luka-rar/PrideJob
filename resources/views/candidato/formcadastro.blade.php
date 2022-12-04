@@ -152,25 +152,25 @@
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Gênero:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="masculino" id="masculino">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="masculino">
                                     <label class="form-check-label" for="masculino">
                                         Masculino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="feminino" id="feminino" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="feminino" checked>
                                     <label class="form-check-label" for="feminino">
                                         Feminino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="prefironaoinformar" id="prefironaoinformar" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="prefironaoinformar" checked>
                                     <label class="form-check-label" for="prefironaoinformar">
                                         Prefiro não informar
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="outros" id="outros" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="outros" checked>
                                     <label class="form-check-label" for="outros">
                                         Outros
                                     </label>
@@ -228,25 +228,25 @@
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Estado Civil:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="solteiro" id="solteiro">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="solteiro">
                                     <label class="form-check-label" for="solteiro">
                                         Solteiro(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="casado" id="casado" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="casado" checked>
                                     <label class="form-check-label" for="casado">
                                         Casado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="divorciado" id="divorciado" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="divorciado" checked>
                                     <label class="form-check-label" for="divorciado">
                                         Divorciado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="viuvo" id="viuvo" checked>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="viuvo" checked>
                                     <label class="form-check-label" for="viuvo">
                                         Viúvo(a)
                                     </label>
@@ -298,7 +298,7 @@
                     <label for="bairro" class="form-label fw-semibold">Bairro:</label>
                     <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
                 </div>
-                <div class="mb-5" >
+                <div class="mb-3" >
                             <label for="estado" class="fw-semibold">Estado:</label>
                             <select class="form-select" id="estado">
                                 <option selected>Estado em que nasceu</option>
