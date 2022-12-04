@@ -94,6 +94,7 @@
         <div class="container">
                 <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
              <form>
+                    <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome Completo:</label>
@@ -151,25 +152,25 @@
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Gênero:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="masculino">
+                                    <input class="form-check-input" type="radio" name="masculino" id="masculino">
                                     <label class="form-check-label" for="masculino">
                                         Masculino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="feminino" checked>
+                                    <input class="form-check-input" type="radio" name="feminino" id="feminino" checked>
                                     <label class="form-check-label" for="feminino">
                                         Feminino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="prefironaoinformar" checked>
+                                    <input class="form-check-input" type="radio" name="prefironaoinformar" id="prefironaoinformar" checked>
                                     <label class="form-check-label" for="prefironaoinformar">
                                         Prefiro não informar
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="outros" checked>
+                                    <input class="form-check-input" type="radio" name="outros" id="outros" checked>
                                     <label class="form-check-label" for="outros">
                                         Outros
                                     </label>
@@ -227,26 +228,26 @@
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Estado Civil:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="solteiro" id="solteiro">
+                                    <label class="form-check-label" for="solteiro">
                                         Solteiro(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    <input class="form-check-input" type="radio" name="casado" id="casado" checked>
+                                    <label class="form-check-label" for="casado">
                                         Casado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-                                    <label class="form-check-label" for="flexRadioDefault3">
+                                    <input class="form-check-input" type="radio" name="divorciado" id="divorciado" checked>
+                                    <label class="form-check-label" for="divorciado">
                                         Divorciado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
-                                    <label class="form-check-label" for="flexRadioDefault4">
+                                    <input class="form-check-input" type="radio" name="viuvo" id="viuvo" checked>
+                                    <label class="form-check-label" for="viuvo">
                                         Viúvo(a)
                                     </label>
                                 </div> 
@@ -259,13 +260,81 @@
                             <label for="nomecompleto" class="form-label fw-semibold">Nome do Pai:</label>
                             <input type="text" class="form-control" id="nomepai" placeholder="Digite o nome completo do seu pai">
                         </div>
+                    </div>      
                 <h3 class="Display-6">Contato</h3>    
+                <h4>Telefone</h4>
                         <div class="mb-3">
-                            <label for="nomecompleto" class="form-label fw-semibold">Celular:</label>
-                            <input type="text" class="form-control" id="nomemãe" placeholder="Digite o nome completo da sua mãe">
+                                    <label for="celular" class="form-label fw-semibold">Celular:</label>
+                                    <input type="text" class="form-control" id="celular" placeholder="() 00000-0000">
                         </div>
-                        
-
+                        <div class="mb-3">
+                                    <label for="telefone" class="form-label fw-semibold">Telefone:</label>
+                                    <input type="text" class="form-control" id="telefone" placeholder="() 00000-0000">
+                        </div>
+                <h4>Email</h4>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label fw-semibold">Email:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
+                </div>
+                <h4>Endereço</h4>
+                <div class="mb-3">
+                    <label for="cep" class="form-label fw-semibold">CEP:</label>
+                    <input type="text" class="form-control" id="cep" placeholder="00000-000">
+                </div>
+                <div class="mb-3">
+                    <label for="logradouro" class="form-label fw-semibold">Logradouro:</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Digite sua rua/avenida">
+                </div>
+                <div class="mb-3">
+                    <label for="numero" class="form-label fw-semibold">Número:</label>
+                    <input type="text" class="form-control" id="numero" placeholder="Digite o número do seu endereço">
+                </div>
+                <div class="mb-3">
+                    <label for="complemento" class="form-label fw-semibold">Complemento:</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Digite seu complemento">
+                    <span class="complementoHelpBlock, form-text">Opcional</span>
+                </div>
+                <div class="mb-3">
+                    <label for="bairro" class="form-label fw-semibold">Bairro:</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
+                </div>
+                <div class="mb-5" >
+                            <label for="estado" class="fw-semibold">Estado:</label>
+                            <select class="form-select" id="estado">
+                                <option selected>Estado em que nasceu</option>
+                                <option value="1">AC</option>
+                                <option value="2">AL</option>
+                                <option value="3">AM</option>
+                                <option value="4">AP</option>
+                                <option value="5">BA</option>
+                                <option value="6">CE</option>
+                                <option value="7">DF</option>
+                                <option value="8">ES</option>
+                                <option value="9">GO</option>
+                                <option value="10">MA</option>
+                                <option value="11">MG</option>
+                                <option value="12">MS</option>
+                                <option value="13">MT</option>
+                                <option value="14">PA</option>
+                                <option value="15">PB</option>
+                                <option value="16">PE</option>
+                                <option value="17">PI</option>
+                                <option value="18">PR</option>
+                                <option value="19">RJ</option>
+                                <option value="20">RN</option>
+                                <option value="21">RO</option>
+                                <option value="22">RR</option>
+                                <option value="23">RS</option>
+                                <option value="24">SC</option>
+                                <option value="25">SE</option>
+                                <option value="26">SP</option>
+                                <option value="27">TO</option>
+                            </select>
+                </div>
+                                <button type="button" class="btn btn-outline-primary mt-3">Salvar</button>     
+                <div>
+                    <label for="cidade" class="fw-semibold"></label>
+                </div>
       </form>
   </div>  
 </div>

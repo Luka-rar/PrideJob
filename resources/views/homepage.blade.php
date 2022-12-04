@@ -12,7 +12,7 @@
 </head>
 <body>  
    <!--NavBar--> 
-    <div class="container">
+     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark mt-5"> 
             <div class="container-fluid">
               <a class="navbar-brand fw-bold text-primary" href="#">Pride Job</a>

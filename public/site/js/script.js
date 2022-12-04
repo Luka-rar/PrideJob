@@ -1,5 +1,9 @@
-//parallax
-$('#navbar').parallax({imageSrc:'../img/pexels-alexander-grey-1191710.jpg'})
+const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios'
+window.addEventListener('', async ()=>{
+    const request = await fetch(urlUF)
+    const response = await request.json()
 
-alert("teste");
+    console.log(response)
+})
+
 console.log("Essa porra ta funcionando.")

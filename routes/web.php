@@ -34,12 +34,17 @@ Route::post('/cliente/logar', [ClienteController::class, 'logar'])->name('client
 //     return view('index');
 // });
 
+
 Route::get('/admin', function () {
     return view('adm.HomeAdm');
 });
 
 Route::get('/cadastro', function () {
     return view('layouts.app');
+});
+
+Route::get('/form_candidato', function () {
+    return view('candidato.formcadastro');
 });
 
 Route::middleware(('admin'))->group(function(){
