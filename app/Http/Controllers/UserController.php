@@ -55,7 +55,7 @@ class UserController extends Controller
 
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
-
+            
             return redirect()->intended('/dashboard');
         }
 
@@ -75,6 +75,12 @@ class UserController extends Controller
     {
         $empresas = Empresa::all();
         return view('user.list_empresas', ['empresas' => $empresas]);
+    }
+
+    public function destroy($id)
+    {
+        Empresa::findOrFail($id)->delete();
+        return redirect('/dashboard/list/empresas')->with('msg', 'Empresa com id: ' . $id . ' foi deletada com sucesso!');
     }
 
 

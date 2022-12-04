@@ -3,6 +3,17 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+    <!--Flash Message--> 
+  <div class="container-fluid">
+        <div class="row">
+            @if(session('msg'))
+            <div class="alert alert-success msg text-center" role="alert">
+                <strong>OK! </strong>{{ session('msg')}}
+            </div>
+            @endif
+            @yield('content')
+        </div>
+    </div>
     <h1>Dashboard - Empresas</h1>
 @stop
 
@@ -52,9 +63,13 @@
                         <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                             <i class="fa fa-lg fa-fw fa-pen"></i>
                         </button>
-                        <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                        <i class="fa fa-lg fa-fw fa-trash"></i>
-                        </button>
+                        <form action="/dashboard/empresas/{{ $empresa->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
+                                <i class="fa fa-lg fa-fw fa-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach 

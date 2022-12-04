@@ -19,8 +19,7 @@ use App\Http\Controllers\ClienteController;
 use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
-Route::get('/empresas/create', [EmpresaController::class, 'create']);
-Route::post('/empresas', [EmpresaController::class, 'store']);
+
 
 // Rotas de autenticação
 //User (ADM)
@@ -46,6 +45,7 @@ Route::middleware(('admin'))->group(function(){
         dd('Você é um admin');
     });
 
+    //Gerenciador de Empresas
     Route::middleware([
         'auth:sanctum',
         config('jetstream.auth_session'),
@@ -53,7 +53,9 @@ Route::middleware(('admin'))->group(function(){
     ])->group(function () {
         Route::get('/dashboard', [UserController::class, 'dashboard']);
         Route::get('/dashboard/list/empresas', [UserController::class, 'listEmpresas']);
+        Route::delete('/dashboard/empresas/{id}', [UserController::class, 'destroy']);
     });
+    
 });
 
 //ROTAS DO CANDIDATO
@@ -66,10 +68,11 @@ Route::middleware(('client'))->group(function(){
 
 //ROTAS DA EMPRESA
 Route::middleware(('empresa'))->group(function(){
-
     Route::get('empresa', function(){
         dd('Você é uma empresa');
     });
+    Route::get('/empresas/create', [EmpresaController::class, 'create']);
+    Route::post('/empresas', [EmpresaController::class, 'store']);
 });
 
 
