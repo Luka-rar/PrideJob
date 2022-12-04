@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Empresa;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,8 +67,14 @@ class UserController extends Controller
 
     public function dashboard()
     {
+        $users = User::all();
+        return view('user.dashboard');
+    }
 
-        return view('usuarios.dashboard');
+    public function listEmpresas()
+    {
+        $empresas = Empresa::all();
+        return view('user.list_empresas', ['empresas' => $empresas]);
     }
 
 

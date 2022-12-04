@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ClienteController;
 use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class, 'create']);
-Route::post('/user', [UserController::class, 'store']);
+Route::get('/empresas/create', [EmpresaController::class, 'create']);
+Route::post('/empresas', [EmpresaController::class, 'store']);
 
 // Rotas de autenticação
 //User (ADM)
@@ -30,18 +31,15 @@ Route::get('/cliente/login', [ClienteController::class, 'login'])->name('login')
 Route::post('/cliente/logar', [ClienteController::class, 'logar'])->name('clientes.logar');
 
 
-// Route::get('/login', function () {
-//     return view('index');
-// });
-
 Route::get('/admin', function () {
     return view('adm.HomeAdm');
 });
 
 Route::get('/cadastro', function () {
-    return view('layouts.app');
+    return view('empresa.create');
 });
 
+//ROTAS DO ADMINISTRADOR
 Route::middleware(('admin'))->group(function(){
 
     Route::get('admin', function(){
@@ -53,12 +51,12 @@ Route::middleware(('admin'))->group(function(){
         config('jetstream.auth_session'),
         'verified'
     ])->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [UserController::class, 'dashboard']);
+        Route::get('/dashboard/list/empresas', [UserController::class, 'listEmpresas']);
     });
 });
 
+//ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
 
     Route::get('client', function(){
@@ -66,6 +64,7 @@ Route::middleware(('client'))->group(function(){
     });
 });
 
+//ROTAS DA EMPRESA
 Route::middleware(('empresa'))->group(function(){
 
     Route::get('empresa', function(){

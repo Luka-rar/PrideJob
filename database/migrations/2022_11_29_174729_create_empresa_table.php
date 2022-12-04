@@ -15,10 +15,17 @@ return new class extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-            $table->string('cnpj');
+            $table->string('nome_empresa');
+            $table->string('cep');
+            $table->string('cidade');
+            $table->string('endereco');
+            $table->string('numero');
+            $table->string('representante');
+            $table->string('cargo');
+            $table->string('email');
+            $table->string('telefone');
+            $table->string('celular');
             $table->timestamps();
-            $table->unsignedBigInteger('id_endereco');
-            $table->foreign('id_endereco')->references('id')->on('enderecos')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

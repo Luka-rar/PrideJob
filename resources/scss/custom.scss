@@ -2,7 +2,9 @@ $body-bg: rgb(27, 27, 27);
 $body-color: white;
 $primary: rgb(0, 119, 225);
 $font-family-sans-serif: 'Poppins', sans-serif;
+$success: rgb(76, 248, 76);
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 .navbar-collapse {
     justify-content: flex-end;
@@ -42,15 +44,6 @@ $font-family-sans-serif: 'Poppins', sans-serif;
     margin: 0 0 65px 0;
     font-size: 40px;
     text-align: center;
-}
-
-.main-title::after{
-    content: "";
-    border-top: 2px solid #ffffff;
-    width: 15%;
-    position: absolute;
-    top: 60px;
-    left: 42.5%;
 }
 
 .about-title {

@@ -312,11 +312,29 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Dashboard',
+            'url'         => 'dashboard/#',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
+        ],
+        [
+            'text'    => 'Consultas',
+            'icon'    => 'fa-solid fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Empresas',
+                    'url'  => 'dashboard/list/empresas',
+                ],
+                [
+                    'text'    => 'Candidatos',
+                    'url'     => '#',
+                ],
+                [
+                    'text' => 'Usuários',
+                    'url'  => '#',
+                ],
+            ],
         ],
         ['header' => 'account_settings'],
         [
