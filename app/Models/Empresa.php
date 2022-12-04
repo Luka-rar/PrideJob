@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empresa extends Model
 {
-    use HasFactory;
-
+    protected $primaryKey = "id";
+    protected $table = "empresas";
+    public $incrementing = false;
+    
     protected $fillable = [
+        'user',
         'nome_empresa',
         'cep',
         'cidade',
@@ -21,4 +24,9 @@ class Empresa extends Model
         'telefone',
         'celular'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user', 'id');
+    }
 }

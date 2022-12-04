@@ -55,8 +55,12 @@ class UserController extends Controller
 
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
+            if(Auth::user()->admin==1){
+                return redirect()->intended('/dashboard');
+            } else {
+                return redirect()->intended('/');
+            }
             
-            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors([
@@ -93,5 +97,14 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/usuarios/login');
+    }
+
+    public function show($id){
+        $user = User::where('id', $id)->first();
+
+        if($user){
+            echo "<h1>Dados do usuário</h1>";
+            echo "<p>Nome: {$user->name}  E-mail: {$user->email} </p>";
+        }
     }
 }

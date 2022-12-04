@@ -20,6 +20,7 @@ use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
 
+Route::get('/usuario/{id}', [UserController::class, 'show']);
 
 // Rotas de autenticação
 //User (ADM)
@@ -60,7 +61,7 @@ Route::middleware(('admin'))->group(function(){
 
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
-
+    Route::get('/candidatos/create', [ClienteController::class, 'create']);
     Route::get('client', function(){
         dd('Você é um client');
     });
@@ -73,6 +74,8 @@ Route::middleware(('empresa'))->group(function(){
     });
     Route::get('/empresas/create', [EmpresaController::class, 'create']);
     Route::post('/empresas', [EmpresaController::class, 'store']);
+    Route::get('/empresas/edit/{id}', [EmpresaController::class, 'edit']);
+    Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
 });
 
 

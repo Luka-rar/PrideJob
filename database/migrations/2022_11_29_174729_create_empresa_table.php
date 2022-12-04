@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user');
             $table->string('nome_empresa');
             $table->string('cep');
             $table->string('cidade');
@@ -26,6 +27,8 @@ return new class extends Migration
             $table->string('telefone');
             $table->string('celular');
             $table->timestamps();
+
+            $table->foreign('user')->references('id')->on('users');
         });
     }
 

@@ -44,6 +44,11 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
+    public function empresa()
+    {
+        return $this->hasOne(Empresa::class, 'user','id');
+    }
+
     /**
      * The attributes that should be cast.
      *

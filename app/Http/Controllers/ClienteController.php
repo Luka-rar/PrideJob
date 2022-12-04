@@ -16,8 +16,7 @@ class ClienteController extends Controller
     }
 
     public function create(){
-        return view('user.create');
-
+        return view('candidato.formcadastro');
     }
    public function login()
     {

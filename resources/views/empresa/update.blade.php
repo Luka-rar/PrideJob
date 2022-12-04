@@ -8,24 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{asset('site/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('/site/custom.css')}}" type="text/css">
 </head>
-<body>
-
-  <!--Flash Message--> 
-  <div class="container-fluid">
-        <div class="row">
-            @if(session('msg'))
-            <div class="alert alert-success msg text-center" role="alert">
-                <strong>Bem-vindo! </strong>{{ session('msg')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @yield('content')
-        </div>
-    </div>
-    <!--NavBar--> 
-
+<body>  
+   <!--NavBar--> 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark mt-5"> 
             <div class="container-fluid">
@@ -58,9 +44,6 @@
                     <ul class="dropdown-menu">
                       @if(Auth::user()->client ==1)
                       <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
-                      @endif
-                      @if(Auth::user()->empresa ==1)
-                      <li><a class="dropdown-item" href="/empresas/edit/{{Auth::user()->empresa()->first()->id}}">Minha conta</a></li>
                       @endif
                       <li><form action="/logout" method="POST">
                         @csrf
@@ -98,73 +81,88 @@
             </div>
           </nav>
     </div>
-    <div class="container-fluid custombg mt-5">
-        <div class="container pt-5 pb-5">
-          <h1 class="fw-bold text-dark">Faça parte da comunidade PrideJob</h1>
-          <p class="text-dark subhead fs-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
+    
+    <div class="container mt-5 col-md-8 offset-md-3">
+        <h1>Cadastre sua empresa</h1>
+        <form class="col-md-9" action="/empresas/update/{{ Auth::user()->empresa()->first()->id }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="border border-secondary rounded p-3">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Nome da empresa:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="nome_empresa" value="{{Auth::user()->empresa()->first()->nome_empresa}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">CEP:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="cep" value="{{Auth::user()->empresa()->first()->cep}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Cidade:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="cidade" value="{{Auth::user()->empresa()->first()->cidade}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Endereço:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="endereco" value="{{Auth::user()->empresa()->first()->endereco}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Número:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="numero" value="{{Auth::user()->empresa()->first()->numero}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Contato na empresa:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="representante" value="{{Auth::user()->empresa()->first()->representante}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Cargo:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="cargo" value="{{Auth::user()->empresa()->first()->cargo}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">E-mail:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="email" value="{{Auth::user()->email}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Telefone:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="telefone" value="{{Auth::user()->empresa()->first()->telefone}}"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Celular:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control mb-3" name="celular" value="{{Auth::user()->empresa()->first()->celular}}"/>
+                    </div>
+                </div>  
+                
+                <div class="text-center">
+					<input type="submit" value="Save" class="btn btn-primary m-3" /> <input
+						type="button" value="Cancel" class="btn btn-secondary"
+						id="buttonCancel" />
+				</div>
+            </div>
+        </form>
     </div>
     
     
 
-<!--Cards-->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm mt-5">
-          <div class="card rellax" data-rellax-speed="4">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm mt-5">
-          <div class="card">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm mt-5 mb-5">
-          <div class="card">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-<!--Sobre Nós-->
-      <div id="about-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-                <h2 class="main-title fw-semibold">Sobre a Pride Job</h2>
-            </div>
-            <div class="col-md-6 mb-5">
-                <img class="img-fluid" src="{{asset('images/bandeiralgbt.jpg')}}" alt="Pride Job">
-            </div>
-            <div class="col-md-6">
-              <h3>A sua chance de adentrar no mercado de trabalho</h3>   <!--pode mudar essa frase aq-->
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero unde ab mollitia laudantium fugit sequi doloremque deleniti harum provident illo voluptates, 
-                officia repellat dolores iure incidunt nesciunt, sint libero.</p>
-              <ul id="about-list">
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
     <script type="module" src="index.js"></script>
     <script src="{{asset ('site/js/script.js')}}"></script>
     <script src="{{asset ('site/jquery.js')}}"></script>
