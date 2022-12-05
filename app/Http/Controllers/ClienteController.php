@@ -18,6 +18,9 @@ class ClienteController extends Controller
     public function create(){
         return view('candidato.formcadastro');
     }
+    public function minhaarea_candidato(){
+        return view('candidato.minhaarea');
+    }
    public function login()
     {
         // $usuario = new User;

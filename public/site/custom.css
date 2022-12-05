@@ -10791,7 +10791,6 @@ textarea.form-control-lg {
 .card {
   border: none;
   background-color: #2e2e2e;
-  background: #2e2e2e url(/images/bandeiralgbt.jpg?84b3e31bbade52cfaf6d67f2230498e0);
 }
 
 .card-body {
@@ -10868,7 +10867,7 @@ footer .container h2:before, footer .container .h2:before {
   left: 0;
   width: 50px;
   height: 2px;
-  background: rgb(78, 70, 110);
+  background: rgb(254, 254, 255);
 }
 
 footer p {

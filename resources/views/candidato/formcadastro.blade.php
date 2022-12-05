@@ -90,10 +90,11 @@
     </div>
 <!--Iniciando o cadastro-->
 
-<div id="about-area mt-5 mb-5">
-        <div class="container">
-                <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
-             <form>
+<div class="container mt-5 col-md-8 offset-md-3">
+        <form class="col-md-9" action="#" method="POST">
+             @csrf
+          <div class="border border-secondary rounded p-5">
+             <h2 class="text-center fw-semibold ">Continue o cadastro...</h2>
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
@@ -335,6 +336,7 @@
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
+            </div>    
       </form>
   </div>  
 </div>

@@ -62,6 +62,7 @@ Route::middleware(('admin'))->group(function(){
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
     Route::get('/candidatos/create', [ClienteController::class, 'create']);
+    Route::get('/candidatos/minha_area', [ClienteController::class, 'minhaarea_candidato']);
     Route::get('client', function(){
         dd('Você é um client');
     });
