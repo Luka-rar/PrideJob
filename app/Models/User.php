@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->hasOne(Empresa::class, 'user','id');
     }
 
+    public function candidato()
+    {
+        return $this->hasOne(Candidato::class, 'user','id');
+    }
+
     /**
      * The attributes that should be cast.
      *

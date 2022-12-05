@@ -14,25 +14,20 @@
             @yield('content')
         </div>
     </div>
-    <h1>Dashboard - Empresas</h1>
+    <h1>Dashboard - Candidatos</h1>
 @stop
 
 @section('content')
 
-    <p>Consulte aqui a relação de empresas cadastradas na PrideJob.</p>
-    @if($empresas->first() == [])
-        <strong>Ainda não há nenhuma empresa cadastrada.</strong>
-    @endif
-
+    <p>Consulte aqui a relação de candidatos cadastradas na PrideJob.</p>
     @php
         $heads = [
             'ID',
-            'Empresa',
-            'Representante',
-            'Cargo',
+            'Nome',
+            'Cpf',
+            'Rg',
             'E-mail',
-            'Cidade',
-            ['label' => 'Actions', 'no-export' => true, 'width' => 30],
+            ['label' => 'Actions', 'no-export' => true, 'width' => 15],
         ];
 
         $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
@@ -46,21 +41,19 @@
                     </button>';
 
         $config = [
-            'data' => $empresas,
+            'data' => $candidatos,
             'order' => [[1, 'asc']],
             'columns' => [null, null, null, ['orderable' => false]],
         ];
     @endphp
-       @if($empresas->first() != [])
         <x-adminlte-datatable id="table1" :heads="$heads" striped hoverable bordered>
-            @foreach($empresas as $empresa)
+            @foreach($candidatos as $candidato)
                 <tr>
-                    <td>{{$empresa->id}}</td>
-                    <td>{{$empresa->nome_empresa}}</td>
-                    <td>{{$empresa->representante}}</td>
-                    <td>{{$empresa->cargo}}</td>
-                    <td>{{$empresa->email}}</td>
-                    <td>{{$empresa->cidade}}</td>
+                    <td>{{$candidato->id}}</td>
+                    <td>{{$candidato->nome_completo}}</td>
+                    <td>{{$candidato->cpf}}</td>
+                    <td>{{$candidato->rg}}</td>
+                    <td>{{$candidato->email}}</td>
                     <td>
                         <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
                         <i class="fa fa-lg fa-fw fa-eye"></i>
@@ -68,7 +61,7 @@
                         <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                             <i class="fa fa-lg fa-fw fa-pen"></i>
                         </button>
-                        <form action="/dashboard/empresas/{{ $empresa->id }}" method="POST">
+                        <form action="/dashboard/candidatos/{{ $candidato->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
@@ -79,7 +72,6 @@
                 </tr>
             @endforeach 
         </x-adminlte-datatable>
-        @endif
 @stop
 
 @section('css')

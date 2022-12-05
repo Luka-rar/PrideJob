@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CandidatoController;
 use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
@@ -41,7 +42,7 @@ Route::get('/cadastro', function () {
 
 //ROTAS DO ADMINISTRADOR
 Route::middleware(('admin'))->group(function(){
-
+    
     Route::get('admin', function(){
         dd('Você é um admin');
     });
@@ -54,6 +55,7 @@ Route::middleware(('admin'))->group(function(){
     ])->group(function () {
         Route::get('/dashboard', [UserController::class, 'dashboard']);
         Route::get('/dashboard/list/empresas', [UserController::class, 'listEmpresas']);
+        Route::get('/dashboard/list/candidatos', [UserController::class, 'listCandidatos']);
         Route::delete('/dashboard/empresas/{id}', [UserController::class, 'destroy']);
     });
     
@@ -61,11 +63,18 @@ Route::middleware(('admin'))->group(function(){
 
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
+<<<<<<< HEAD
     Route::get('/candidatos/create', [ClienteController::class, 'create']);
     Route::get('/candidatos/minha_area', [ClienteController::class, 'minhaarea_candidato']);
+=======
+>>>>>>> 174ff4ba558ad78316c996b50c8256a8e40dc2ce
     Route::get('client', function(){
         dd('Você é um client');
     });
+    Route::get('/candidatos/create', [CandidatoController::class, 'create']);
+    Route::post('/candidatos', [CandidatoController::class, 'store']);
+    Route::get('/candidatos/edit/', [CandidatoController::class, 'edit']);
+    Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
 });
 
 //ROTAS DA EMPRESA
@@ -75,7 +84,7 @@ Route::middleware(('empresa'))->group(function(){
     });
     Route::get('/empresas/create', [EmpresaController::class, 'create']);
     Route::post('/empresas', [EmpresaController::class, 'store']);
-    Route::get('/empresas/edit/{id}', [EmpresaController::class, 'edit']);
+    Route::get('/empresas/edit', [EmpresaController::class, 'edit']);
     Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
 });
 

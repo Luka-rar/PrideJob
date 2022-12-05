@@ -17,7 +17,7 @@
         <div class="row">
             @if(session('msg'))
             <div class="alert alert-success msg text-center" role="alert">
-                <strong>Bem-vindo! </strong>{{ session('msg')}}
+                <strong>👍 </strong>{{ session('msg')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
@@ -56,11 +56,24 @@
                     {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
-                      @if(Auth::user()->client ==1)
-                      <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+
+                      @if(Auth::user()->client == 1)
+                        @if(Auth::user()->candidato()->first() == [])
+                        <li><a class="dropdown-item" href="/candidatos/create/">Complete seu cadastro</a></li>
+                        @endif
+                        @if(Auth::user()->candidato()->first() != [])
+                        <li><a class="dropdown-item" href="/candidatos/edit/">Minha conta</a></li>
+                        <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+                        @endif
                       @endif
-                      @if(Auth::user()->empresa ==1)
-                      <li><a class="dropdown-item" href="/empresas/edit/{{Auth::user()->empresa()->first()->id}}">Minha conta</a></li>
+
+                      @if(Auth::user()->empresa == 1)
+                        @if(Auth::user()->empresa()->first() == [])
+                        <li><a class="dropdown-item" href="/empresas/create/">Complete seu cadastro</a></li>
+                        @endif
+                        @if(Auth::user()->empresa()->first() != [])
+                        <li><a class="dropdown-item" href="/empresas/edit/">Minha conta</a></li>
+                        @endif
                       @endif
                       <li><form action="/logout" method="POST">
                         @csrf
@@ -77,7 +90,7 @@
                       Login/Cadastro
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/cliente/login">Login</a></li>
+                      <li><a class="dropdown-item" href="/login">Login</a></li>
                       <li><a class="dropdown-item" href="/register">Inscreva-se</a></li>
                     </ul>
                   </li>
@@ -104,7 +117,6 @@
           <p class="text-dark subhead fs-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
     </div>
-    
     
 
 <!--Cards-->

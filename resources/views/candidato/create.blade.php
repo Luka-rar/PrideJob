@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro || Pride Job</title>
-    <link rel="stylesheet" href="{{ asset('site/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('site/custom.css')}}" text="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
@@ -90,28 +90,36 @@
     </div>
 <!--Iniciando o cadastro-->
 
+<<<<<<< HEAD:resources/views/candidato/formcadastro.blade.php
 <div class="container mt-5 col-md-8 offset-md-3">
         <form class="col-md-9" action="#" method="POST">
              @csrf
           <div class="border border-secondary rounded p-5">
              <h2 class="text-center fw-semibold ">Continue o cadastro...</h2>
+=======
+<div id="about-area mt-5 mb-5">
+        <div class="container">
+                <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
+             <form action="/candidatos" method="POST">
+              @csrf
+>>>>>>> 174ff4ba558ad78316c996b50c8256a8e40dc2ce:resources/views/candidato/create.blade.php
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome Completo:</label>
-                            <input type="text" class="form-control" id="nomecompleto" placeholder="Digite seu Nome Completo">
+                            <input type="text" class="form-control" name="nome_completo" id="nomecompleto" placeholder="Digite seu Nome Completo">
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label fw-semibold">CPF:</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                            <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite seu CPF">
                         </div>
                         <div class="mb-3">
                             <label for="rg" class="form-label fw-semibold">RG:</label>
-                            <input type="text" class="form-control" id="rg" placeholder="Digite seu RG">
+                            <input type="text" class="form-control" name="rg" id="rg" placeholder="Digite seu RG">
                         </div>
                         <div class="mb-3" >
                             <label for="uf-rg" class="fw-semibold">UF-RG</label>
-                            <select class="form-select" id="ur-rg">
+                            <select class="form-select" id="ur-rg" name="uf_rg">
                                 <option selected>Estado que emitiu o RG</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
@@ -144,34 +152,34 @@
                         </div>    
                         <div class="mb-3">
                             <label for="oe-rg" class="form-label fw-semibold">Órgão Emissor - RG :</label>
-                            <input type="text" class="form-control" id="oe-rg" placeholder="Órgão Emissor do seu RG">
+                            <input type="text" class="form-control" name="orgao_emissor" id="oe-rg" placeholder="Órgão Emissor do seu RG">
                         </div>
                         <div class="mb-3">
                             <label for="data-rg" class="form-label fw-semibold">Data de Emissão - RG:</label>
-                            <input type="text" class="form-control" id="data-rg" placeholder="DD/MM/AAAA">
+                            <input type="text" class="form-control" name="data_emissao" id="data-rg" placeholder="DD/MM/AAAA">
                         </div>
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Gênero:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="masculino">
+                                    <input class="form-check-input" type="radio" name="genero" value="masculino" id="masculino">
                                     <label class="form-check-label" for="masculino">
                                         Masculino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="feminino" checked>
+                                    <input class="form-check-input" type="radio" name="genero" value="feminino" id="feminino" checked>
                                     <label class="form-check-label" for="feminino">
                                         Feminino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="prefironaoinformar" checked>
+                                    <input class="form-check-input" type="radio" name="genero" value="nao informado" id="prefironaoinformar" checked>
                                     <label class="form-check-label" for="prefironaoinformar">
                                         Prefiro não informar
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="outros" checked>
+                                    <input class="form-check-input" type="radio" name="genero" value="outro" id="outros" checked>
                                     <label class="form-check-label" for="outros">
                                         Outros
                                     </label>
@@ -179,7 +187,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="uf-rg" class="fw-semibold">Etnia:</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="etnia">
                                 <option selected>Selecione Sua Etnia:</option>
                                 <option value="1">Preta</option>
                                 <option value="2">Indígena</option>
@@ -191,11 +199,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="data-nascimento" class="form-label fw-semibold">Data de Nascimento:</label>
-                            <input type="text" class="form-control" id="data-nascimento" placeholder="DD/MM/AAAA">
+                            <input type="text" class="form-control" id="data-nascimento" name="data_nascimento" placeholder="DD/MM/AAAA">
                         </div>
                         <div class="mb-3" >
                             <label for="uf-rg" class="fw-semibold">UF - Nascimento</label>
-                            <select class="form-select" id="ur-rg">
+                            <select class="form-select" id="ur-rg" name="uf_nascimento">
                                 <option selected>Estado em que nasceu</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
@@ -229,25 +237,25 @@
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Estado Civil:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="solteiro">
+                                    <input class="form-check-input" type="radio" name="estado_civil" id="solteiro">
                                     <label class="form-check-label" for="solteiro">
                                         Solteiro(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="casado" checked>
+                                    <input class="form-check-input" type="radio" name="estado_civil" id="casado" checked>
                                     <label class="form-check-label" for="casado">
                                         Casado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="divorciado" checked>
+                                    <input class="form-check-input" type="radio" name="estado_civil" id="divorciado" checked>
                                     <label class="form-check-label" for="divorciado">
                                         Divorciado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="viuvo" checked>
+                                    <input class="form-check-input" type="radio" name="estado_civil" id="viuvo" checked>
                                     <label class="form-check-label" for="viuvo">
                                         Viúvo(a)
                                     </label>
@@ -255,53 +263,53 @@
                         </div>
                         <div class="mb-3">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome da Mãe:</label>
-                            <input type="text" class="form-control" id="nomemãe" placeholder="Digite o nome completo da sua mãe">
+                            <input type="text" class="form-control" name="nome_mae" id="nomemãe" placeholder="Digite o nome completo da sua mãe">
                         </div>
                         <div class="mb-5">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome do Pai:</label>
-                            <input type="text" class="form-control" id="nomepai" placeholder="Digite o nome completo do seu pai">
+                            <input type="text" class="form-control" name="nome_pai" id="nomepai" placeholder="Digite o nome completo do seu pai">
                         </div>
                     </div>      
                 <h3 class="Display-6">Contato</h3>    
                 <h4>Telefone</h4>
                         <div class="mb-3">
                                     <label for="celular" class="form-label fw-semibold">Celular:</label>
-                                    <input type="text" class="form-control" id="celular" placeholder="() 00000-0000">
+                                    <input type="text" class="form-control" name="celular" id="celular" placeholder="() 00000-0000">
                         </div>
                         <div class="mb-3">
                                     <label for="telefone" class="form-label fw-semibold">Telefone:</label>
-                                    <input type="text" class="form-control" id="telefone" placeholder="() 00000-0000">
+                                    <input type="text" class="form-control" name="telefone" id="telefone" placeholder="() 00000-0000">
                         </div>
                 <h4>Email</h4>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label fw-semibold">Email:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
                 </div>
                 <h4>Endereço</h4>
                 <div class="mb-3">
                     <label for="cep" class="form-label fw-semibold">CEP:</label>
-                    <input type="text" class="form-control" id="cep" placeholder="00000-000">
+                    <input type="text" class="form-control" name="cep" id="cep" placeholder="00000-000">
                 </div>
                 <div class="mb-3">
                     <label for="logradouro" class="form-label fw-semibold">Logradouro:</label>
-                    <input type="text" class="form-control" id="logradouro" placeholder="Digite sua rua/avenida">
+                    <input type="text" class="form-control" name="logradouro" id="logradouro" placeholder="Digite sua rua/avenida">
                 </div>
                 <div class="mb-3">
                     <label for="numero" class="form-label fw-semibold">Número:</label>
-                    <input type="text" class="form-control" id="numero" placeholder="Digite o número do seu endereço">
+                    <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o número do seu endereço">
                 </div>
                 <div class="mb-3">
                     <label for="complemento" class="form-label fw-semibold">Complemento:</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="Digite seu complemento">
+                    <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Digite seu complemento">
                     <span class="complementoHelpBlock, form-text">Opcional</span>
                 </div>
                 <div class="mb-3">
                     <label for="bairro" class="form-label fw-semibold">Bairro:</label>
-                    <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
+                    <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite seu bairro">
                 </div>
                 <div class="mb-3" >
                             <label for="estado" class="fw-semibold">Estado:</label>
-                            <select class="form-select" id="estado">
+                            <select class="form-select" name="estado" id="estado">
                                 <option selected>Estado em que nasceu</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
@@ -332,7 +340,7 @@
                                 <option value="27">TO</option>
                             </select>
                 </div>
-                                <button type="button" class="btn btn-outline-primary mt-3">Salvar</button>     
+                    <button type="submit" class="btn btn-outline-primary mt-3">Salvar</button>     
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
