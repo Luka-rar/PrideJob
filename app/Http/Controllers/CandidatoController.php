@@ -1,0 +1,105 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Candidato;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class CandidatoController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    
+    public function create()
+    {
+        return view('candidato.create');
+    }
+
+    
+    public function store(Request $request)
+    {
+        $candidato['nome_completo'] = $request->nome_completo;
+        $candidato['cpf'] = $request->cpf;
+        $candidato['rg'] = $request->rg;
+        $candidato['uf_rg'] = $request->uf_rg;
+        $candidato['orgao_emissor'] = $request->orgao_emissor;
+        $candidato['data_emissao'] = $request->data_emissao;
+        $candidato['genero'] = $request->genero;
+        $candidato['etnia'] = $request->etnia;
+        $candidato['data_nascimento'] = $request->data_nascimento;
+        $candidato['uf_nascimento'] = $request->uf_nascimento;
+        $candidato['estado_civil'] = $request->estado_civil;
+        $candidato['nome_mae'] = $request->nome_mae;
+        $candidato['nome_pai'] = $request->nome_pai;
+        $candidato['celular'] = $request->celular;
+        $candidato['telefone'] = $request->telefone;
+        $candidato['email'] = $request->email;
+        $candidato['cep'] = $request->cep;
+        $candidato['logradouro'] = $request->logradouro;
+        $candidato['numero'] = $request->numero;
+        $candidato['complemento'] = $request->complemento;
+        $candidato['bairro'] = $request->bairro;
+        $candidato['estado'] = $request->estado;
+        $candidato['user'] = Auth::user()->id;
+    
+        Auth::user()->candidato()->create($candidato);
+
+        return redirect('/')->with('msg','Candidato cadastrado com sucesso!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Candidato  $candidato
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Candidato $candidato)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Candidato  $candidato
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $candidato = Candidato::findOrFail($id);
+        return view('candidato.update', ['candidato' => $candidato]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Candidato  $candidato
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        $candidato = Candidato::findOrFail($request->id)->update($request->all());
+        return redirect('/')->with('msg','Candidato editado com sucesso!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Candidato  $candidato
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Candidato $candidato)
+    {
+        //
+    }
+}

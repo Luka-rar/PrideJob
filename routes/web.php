@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CandidatoController;
 use App\Models\User;
 
 Route::get('/', [UserController::class, 'index']);
@@ -41,7 +42,7 @@ Route::get('/cadastro', function () {
 
 //ROTAS DO ADMINISTRADOR
 Route::middleware(('admin'))->group(function(){
-
+    
     Route::get('admin', function(){
         dd('Você é um admin');
     });
@@ -61,10 +62,13 @@ Route::middleware(('admin'))->group(function(){
 
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
-    Route::get('/candidatos/create', [ClienteController::class, 'create']);
     Route::get('client', function(){
         dd('Você é um client');
     });
+    Route::get('/candidatos/create', [CandidatoController::class, 'create']);
+    Route::post('/candidatos', [CandidatoController::class, 'store']);
+    Route::get('/candidatos/edit/{id}', [CandidatoController::class, 'edit']);
+    Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
 });
 
 //ROTAS DA EMPRESA
