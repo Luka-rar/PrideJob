@@ -20,10 +20,9 @@ class EmpresaController extends Controller
 
     }
 
-    public function edit($id){
-        $empresa = Empresa::findOrFail($id);
+    public function edit(){
         
-        return view('empresa.update', ['empresa' => $empresa]);
+        return view('empresa.update');
     }
     public function update(Request $request){
         $empresa = Empresa::findOrFail($request->id)->update($request->all());

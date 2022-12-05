@@ -328,7 +328,7 @@ return [
                 ],
                 [
                     'text'    => 'Candidatos',
-                    'url'     => '#',
+                    'url'     => 'dashboard/list/candidatos',
                 ],
                 [
                     'text' => 'Usuários',

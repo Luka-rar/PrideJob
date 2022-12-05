@@ -55,6 +55,7 @@ Route::middleware(('admin'))->group(function(){
     ])->group(function () {
         Route::get('/dashboard', [UserController::class, 'dashboard']);
         Route::get('/dashboard/list/empresas', [UserController::class, 'listEmpresas']);
+        Route::get('/dashboard/list/candidatos', [UserController::class, 'listCandidatos']);
         Route::delete('/dashboard/empresas/{id}', [UserController::class, 'destroy']);
     });
     
@@ -67,7 +68,7 @@ Route::middleware(('client'))->group(function(){
     });
     Route::get('/candidatos/create', [CandidatoController::class, 'create']);
     Route::post('/candidatos', [CandidatoController::class, 'store']);
-    Route::get('/candidatos/edit/{id}', [CandidatoController::class, 'edit']);
+    Route::get('/candidatos/edit/', [CandidatoController::class, 'edit']);
     Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
 });
 
@@ -78,7 +79,7 @@ Route::middleware(('empresa'))->group(function(){
     });
     Route::get('/empresas/create', [EmpresaController::class, 'create']);
     Route::post('/empresas', [EmpresaController::class, 'store']);
-    Route::get('/empresas/edit/{id}', [EmpresaController::class, 'edit']);
+    Route::get('/empresas/edit', [EmpresaController::class, 'edit']);
     Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
 });
 

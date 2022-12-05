@@ -56,14 +56,25 @@
                     {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
+
                       @if(Auth::user()->client == 1)
-                      <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
-                      <li><a class="dropdown-item" href="/candidatos/edit/{{Auth::user()->candidato()->first()->id}}">Minha conta</a></li>
+                        @if(Auth::user()->candidato()->first() == [])
+                        <li><a class="dropdown-item" href="/candidatos/create/">Complete seu cadastro</a></li>
+                        @endif
+                        @if(Auth::user()->candidato()->first() != [])
+                        <li><a class="dropdown-item" href="/candidatos/edit/">Minha conta</a></li>
+                        <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+                        @endif
                       @endif
-                      @if(Auth::user()->empresa ==1)
-                      <li><a class="dropdown-item" href="/empresas/edit/{{Auth::user()->empresa()->first()->id}}">Minha conta</a></li>
+
+                      @if(Auth::user()->empresa == 1)
+                        @if(Auth::user()->empresa()->first() == [])
+                        <li><a class="dropdown-item" href="/empresas/create/">Complete seu cadastro</a></li>
+                        @endif
+                        @if(Auth::user()->empresa()->first() != [])
+                        <li><a class="dropdown-item" href="/empresas/edit/">Minha conta</a></li>
+                        @endif
                       @endif
-                      
                       <li><form action="/logout" method="POST">
                         @csrf
                         <a href="/logout" class="dropdown-item" onclick="event.preventDefault();
