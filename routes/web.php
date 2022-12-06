@@ -12,15 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\VagaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CandidatoController;
 use App\Models\User;
 
-Route::get('/', [UserController::class, 'index']);
-
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/vagas/painel', [HomeController::class, 'painelVagas']);
 Route::get('/usuario/{id}', [UserController::class, 'show']);
 
 // Rotas de autenticação
@@ -63,11 +64,8 @@ Route::middleware(('admin'))->group(function(){
 
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
-<<<<<<< HEAD
     Route::get('/candidatos/create', [ClienteController::class, 'create']);
-    Route::get('/candidatos/minha_area', [ClienteController::class, 'minhaarea_candidato']);
-=======
->>>>>>> 174ff4ba558ad78316c996b50c8256a8e40dc2ce
+    Route::get('/candidatos/dashboard', [CandidatoController::class, 'dashboard']);
     Route::get('client', function(){
         dd('Você é um client');
     });
@@ -82,10 +80,14 @@ Route::middleware(('empresa'))->group(function(){
     Route::get('empresa', function(){
         dd('Você é uma empresa');
     });
+    Route::get('/empresas/dashboard', [EmpresaController::class, 'dashboard']);
     Route::get('/empresas/create', [EmpresaController::class, 'create']);
     Route::post('/empresas', [EmpresaController::class, 'store']);
     Route::get('/empresas/edit', [EmpresaController::class, 'edit']);
     Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
+
+    Route::get('/vagas/create', [VagaController::class, 'create']);
+    Route::post('/vagas', [VagaController::class, 'store']);
 });
 
 

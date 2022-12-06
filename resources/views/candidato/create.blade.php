@@ -90,19 +90,11 @@
     </div>
 <!--Iniciando o cadastro-->
 
-<<<<<<< HEAD:resources/views/candidato/formcadastro.blade.php
-<div class="container mt-5 col-md-8 offset-md-3">
-        <form class="col-md-9" action="#" method="POST">
-             @csrf
-          <div class="border border-secondary rounded p-5">
-             <h2 class="text-center fw-semibold ">Continue o cadastro...</h2>
-=======
 <div id="about-area mt-5 mb-5">
         <div class="container">
                 <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
              <form action="/candidatos" method="POST">
               @csrf
->>>>>>> 174ff4ba558ad78316c996b50c8256a8e40dc2ce:resources/views/candidato/create.blade.php
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
