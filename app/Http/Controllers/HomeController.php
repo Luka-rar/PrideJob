@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vaga;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,14 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+    {       
+        return view('homepage');
+    }
+
+    public function painelVagas()
     {
-        return view('home');
+        $vagas = Vaga::all();
+       
+        return view('painel_vagas', ['vagas' => $vagas]);
     }
 }

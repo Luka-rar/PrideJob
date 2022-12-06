@@ -41,18 +41,12 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Conheça o Pride Job</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/vagas/painel">Painel de vagas</a>
-                  </li>
+                 
                  @auth
                  @if(Auth::user()->empresa ==1)
-                 @if(Auth::user()->empresa()->first() != [])
-                    @if(Auth::user()->empresa()->first()->vagas()->get() != null)
-                    <li class="nav-item">
-                      <a class="nav-link" href="/vagas/create">Adicionar vaga</a>
-                    </li>
-                    @endif
-                  @endif
+                  <li class="nav-item">
+                    <a class="nav-link" href="/vagas/create">Adicionar vaga</a>
+                  </li>
                   @endif
                  @endauth
                  
@@ -127,62 +121,30 @@
 
 <!--Cards-->
     <div class="container">
-      <div class="row">
-        <div class="col-sm mt-5">
-          <div class="card rellax" data-rellax-speed="4">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h1 class="mt-4 text-center" id="painel_text">Painel de vagas</h1>
+      <div class="row mt-5 text-center">
+        @foreach($vagas as $vaga)
+        <div class="card m-2 mb-5" style="max-width: 500px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{asset('images/bandeiralgbt.jpg')}}" style="max-width: 400px;" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Empresa: {{$vaga->nome_empresa}}</h5>
+                <p class="card-text">Id: {{$vaga->id}}</p>
+                <p class="card-text">Categoria: <small class="text-muted">{{$vaga->categoria}}</small></p>
+                <p class="card-text">Quantidade: <small class="text-muted">{{$vaga->quantidade}}</small></p>
+                <p class="card-text">R$:{{$vaga->salario}}</p>
+                <a href="#" class="btn btn-primary">Tenho interesse</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm mt-5">
-          <div class="card">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm mt-5 mb-5">
-          <div class="card">
-            <img src="{{asset('images/bandeiralgbt.jpg')}}" class="card-img-top" alt="bandeiralgbt">
-            <div class="card-body p-4 rounded-bottom">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        </div>
+        @endforeach
       </div>
     </div>
-<!--Sobre Nós-->
-      <div id="about-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-                <h2 class="main-title fw-semibold">Sobre a Pride Job</h2>
-            </div>
-            <div class="col-md-6 mb-5">
-                <img class="img-fluid" src="{{asset('images/bandeiralgbt.jpg')}}" alt="Pride Job">
-            </div>
-            <div class="col-md-6">
-              <h3>A sua chance de adentrar no mercado de trabalho</h3>   <!--pode mudar essa frase aq-->
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero unde ab mollitia laudantium fugit sequi doloremque deleniti harum provident illo voluptates, 
-                officia repellat dolores iure incidunt nesciunt, sint libero.</p>
-              <ul id="about-list">
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-                <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+
     <script type="module" src="index.js"></script>
     <script src="{{asset ('site/js/script.js')}}"></script>
     <script src="{{asset ('site/jquery.js')}}"></script>

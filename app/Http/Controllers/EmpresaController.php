@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empresa;
+use App\Models\Vaga;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +19,13 @@ class EmpresaController extends Controller
     public function create(){
         return view('empresa.create');
 
+    }
+    public function dashboard(){
+        $empresa = auth()->user()->empresa()->first();
+        
+        $vagas = $empresa->vagas()->get();
+
+        return view('empresa.dashboard', ['vagas' => $vagas]);
     }
 
     public function edit(){

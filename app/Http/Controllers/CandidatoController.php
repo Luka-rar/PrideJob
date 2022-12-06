@@ -24,6 +24,9 @@ class CandidatoController extends Controller
         return view('candidato.create');
     }
 
+    public function dashboard(){
+        return view('candidato.dashboard');
+    }
     
     public function store(Request $request)
     {

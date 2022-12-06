@@ -29,4 +29,8 @@ class Empresa extends Model
     {
         return $this->belongsTo(User::class, 'user', 'id');
     }
+
+    public function vagas(){
+        return $this->hasMany(Vaga::class, 'user_id', 'id');
+    }
 }

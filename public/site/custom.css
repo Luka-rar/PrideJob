@@ -10786,6 +10786,7 @@ textarea.form-control-lg {
 .custombg {
   background: black url(/images/pexels-alexander-grey-1191710.jpg?07fdf3d3f820ce5c1ba8d3434490c7b5);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .card {
