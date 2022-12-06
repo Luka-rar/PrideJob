@@ -201,7 +201,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="numero" class="form-label fw-semibold">Número:</label>
-                    <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o número do seu endereço" value="{{Auth::user()->candidato()->first()->numero}}">
+                    <input type="text" class="form-control" name="numero" id="numero" value="{{Auth::user()->candidato()->first()->logradouro}}">
                 </div>
                 <div class="mb-3">
                     <label for="complemento" class="form-label fw-semibold">Complemento:</label>
@@ -248,7 +248,6 @@
                     <input type="submit" value="Save" class="btn btn-primary m-3" /> <input
                     type="button" value="Cancel" class="btn btn-secondary"
                     id="buttonCancel" />
-				        
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
@@ -256,8 +255,18 @@
   </div>  
 </div>
 <script src="{{asset ('site/jquery.js')}}"></script>
+<script src="{{asset ('site/js/mask.js')}}"></script>
+<script src="{{asset ('site/js/script.js')}}"></script>
     <script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function($){
+            $('#cep').mask('00000-000');
+            $('#telefone').mask('(00) 0000-0000');
+            $('#celular').mask('(00) 00000-0000');
+            $('#data-nascimento').mask('00/00/0000');
+            $('#data-rg').mask('00/00/0000');
+            $('#rg').mask('00.000.000-0');
+            $('#cpf').mask('000.000.000-00');
+            console.log('asaasasasasas');
 			$("#buttonCancel").on("click", function() {
 				window.location = "/";
 			});
