@@ -245,7 +245,9 @@
                                 <option value="27">TO</option>
                             </select>
                 </div>
-                    <button type="submit" class="btn btn-outline-primary mt-3">Salvar</button>     
+                    <input type="submit" value="Save" class="btn btn-primary m-3" /> <input
+                        type="button" value="Cancel" class="btn btn-secondary"
+                        id="buttonCancel" />   
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
@@ -253,4 +255,12 @@
       </form>
   </div>  
 </div>
+<script src="{{asset ('site/jquery.js')}}"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$("#buttonCancel").on("click", function() {
+				window.location = "/";
+			});
+		});
+	</script>
 @endsection('content')

@@ -76,9 +76,11 @@ class VagaController extends Controller
      * @param  \App\Models\Vaga  $vaga
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vaga $vaga)
+    public function edit($id)
     {
-        //
+        $vaga = new Vaga;
+        $vaga = Vaga::findOrFail($id);
+        return view('empresa.vaga_update', ['vaga' => $vaga]);
     }
 
     /**
@@ -88,9 +90,10 @@ class VagaController extends Controller
      * @param  \App\Models\Vaga  $vaga
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vaga $vaga)
+    public function update(Request $request)
     {
-        //
+        $vaga = Vaga::findOrFail($request->id)->update($request->all());
+        return redirect('/empresas/dashboard')->with('msg','Vaga editada com sucesso!');
     }
 
     /**

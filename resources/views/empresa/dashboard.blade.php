@@ -21,7 +21,7 @@
       <div class="card-body">
         <h5 class="card-title">Vaga: #{{$vaga->id}}</h5>
           <p class="card-text">Categoria:<small class="text-muted"> {{$vaga->categoria}}</small></p>
-          <a href="#" class="btn btn-primary mb-2">Detalhes</a><br>
+          <a href="/vagas/edit/{{ $vaga->id }}" class="btn btn-primary mb-2">Detalhes</a><br>
           <form action="/vagas/{{ $vaga->id }}" method="POST">
             @csrf
             @method('DELETE')

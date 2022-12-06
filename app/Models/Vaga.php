@@ -12,6 +12,21 @@ class Vaga extends Model
     protected $cast = [
         'items' => 'array'
     ];
+    
+    protected $fillable = [
+        'user_id',
+        'nome_empresa',
+        'quantidade',
+        'categoria',
+        'tipo_vaga',
+        'salario',
+        'beneficio',
+        'requisitos',
+        'local',
+        'horario',
+        'cidade',
+        'estado'
+    ];
 
     protected $dates = ['date'];
 

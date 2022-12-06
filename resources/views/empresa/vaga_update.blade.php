@@ -2,26 +2,27 @@
 
 @section('content')    
     <div class="container mt-5 col-md-8 offset-md-3">
-        <h1>Cadastre a vaga</h1>
-        <form class="col-md-9" action="/vagas" method="POST">
+        <h1>Atualização de vaga</h1>
+        <form class="col-md-9" action="/vagas/update/{{ $vaga->id }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="border border-secondary rounded p-3">
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Quantidade:</label>
                     <div class="col-sm-8">
-                        <input type="number" class="form-control mb-3" name="quantidade"/>
+                        <input type="number" class="form-control mb-3" name="quantidade" value="{{$vaga->quantidade}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Categoria:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="categoria"/>
+                        <input type="text" class="form-control mb-3" name="categoria" value="{{$vaga->categoria}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-15">
                     <select class="form-select mb-3" aria-label="Default select example" name="tipo_vaga">
-                      <option selected> Tipo de Vaga:</option>
+                      <option selected value="{{$vaga->tipo_vaga}}">{{$vaga->tipo_vaga}}</option>
                       <option value="Vaga de Estágio">Estágio</option>
                       <option value="Vaga de Aprendiz">Aprendiz</option>
                       <option value="Vaga CLT">CLT</option>
@@ -32,43 +33,43 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Salário:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="salario"/>
+                        <input type="text" class="form-control mb-3" name="salario" value="{{$vaga->salario}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Benefícios:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control mb-3" id="exampleFormControlTextarea1" name="beneficio" rows="3"></textarea>
+                        <textarea class="form-control mb-3" id="exampleFormControlTextarea1" name="beneficio" rows="3">{{$vaga->beneficio}}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Requisitos:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control mb-3" id="exampleFormControlTextarea1" name="requisitos" rows="3"></textarea>
+                        <textarea class="form-control mb-3" id="exampleFormControlTextarea1" name="requisitos" rows="3">{{$vaga->requisitos}}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Local:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="local"/>
+                        <input type="text" class="form-control mb-3" name="local" value="{{$vaga->local}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Horário:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="horario"/>
+                        <input type="text" class="form-control mb-3" name="horario" value="{{$vaga->horario}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Cidade:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="cidade"/>
+                        <input type="text" class="form-control mb-3" name="cidade" value="{{$vaga->cidade}}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                 <div class="col-sm-15">
                   <select class="form-select mb-3" id="ur-rg" name="estado">
-                    <option selected>Estado da vaga:</option>
+                    <option selected value="{{$vaga->estado}}">{{$vaga->estado}}</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AM">AM</option>
@@ -107,6 +108,7 @@
             </div>
         </form>
     </div>
+
     <script src="{{asset ('site/jquery.js')}}"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
@@ -115,4 +117,5 @@
 			});
 		});
 	</script>
-    @endsection('content')   
+    @endsection('content')
+       

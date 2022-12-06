@@ -67,7 +67,7 @@ Route::middleware(('client'))->group(function(){
     });
     Route::get('/candidatos/create', [CandidatoController::class, 'create']);
     Route::post('/candidatos', [CandidatoController::class, 'store']);
-    Route::get('/candidatos/edit/', [CandidatoController::class, 'edit']);
+    Route::get('/candidatos/edit', [CandidatoController::class, 'edit']);
     Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
 });
 
@@ -85,6 +85,8 @@ Route::middleware(('empresa'))->group(function(){
     Route::get('/vagas/create', [VagaController::class, 'create']);
     Route::post('/vagas', [VagaController::class, 'store']);
     Route::delete('/vagas/{id}', [VagaController::class, 'destroy']);
+    Route::get('/vagas/edit/{id}', [VagaController::class, 'edit']);
+    Route::put('/vagas/update/{id}', [VagaController::class, 'update']);
 });
 
 
