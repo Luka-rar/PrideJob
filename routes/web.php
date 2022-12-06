@@ -20,7 +20,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CandidatoController;
 use App\Models\User;
 
-Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/vagas/painel', [HomeController::class, 'painelVagas']);
 Route::get('/usuario/{id}', [UserController::class, 'show']);
 
@@ -28,13 +28,11 @@ Route::get('/usuario/{id}', [UserController::class, 'show']);
 //User (ADM)
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/logar', [UserController::class, 'logar'])->name('usuarios.logar');
-//Cliente
-Route::get('/cliente/login', [ClienteController::class, 'login'])->name('login');
-Route::post('/cliente/logar', [ClienteController::class, 'logar'])->name('clientes.logar');
 
 
-Route::get('/admin', function () {
-    return view('adm.HomeAdm');
+
+Route::get('/', function () {
+    return view('homepage');
 });
 
 Route::get('/cadastro', function () {
