@@ -63,11 +63,8 @@ Route::middleware(('admin'))->group(function(){
 
 //ROTAS DO CANDIDATO
 Route::middleware(('client'))->group(function(){
-<<<<<<< HEAD
     Route::get('/candidatos/create', [ClienteController::class, 'create']);
     Route::get('/candidatos/minha_area', [ClienteController::class, 'minhaarea_candidato']);
-=======
->>>>>>> 174ff4ba558ad78316c996b50c8256a8e40dc2ce
     Route::get('client', function(){
         dd('Você é um client');
     });
