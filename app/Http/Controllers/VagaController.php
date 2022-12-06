@@ -99,8 +99,9 @@ class VagaController extends Controller
      * @param  \App\Models\Vaga  $vaga
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vaga $vaga)
+    public function destroy($id)
     {
-        //
+        Vaga::findOrFail($id)->delete();
+        return redirect('/empresas/dashboard')->with('msg', 'Vaga com id: ' . $id . ' foi deletada com sucesso!');
     }
 }
