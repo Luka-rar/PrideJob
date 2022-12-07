@@ -5230,8 +5230,8 @@ textarea.form-control-lg {
   --bs-modal-width: 500px;
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
-  --bs-modal-color: ;
-  --bs-modal-bg: #fff;
+  --bs-modal-color: white;
+  --bs-modal-bg: rgb(29, 29, 29);
   --bs-modal-border-color: var(--bs-border-color-translucent);
   --bs-modal-border-width: 1px;
   --bs-modal-border-radius: 0.5rem;
@@ -6051,8 +6051,8 @@ textarea.form-control-lg {
   --bs-offcanvas-height: 30vh;
   --bs-offcanvas-padding-x: 1rem;
   --bs-offcanvas-padding-y: 1rem;
-  --bs-offcanvas-color: ;
-  --bs-offcanvas-bg: #fff;
+  --bs-offcanvas-color: white;
+  --bs-offcanvas-bg: rgb(29, 29, 29);
   --bs-offcanvas-border-width: 1px;
   --bs-offcanvas-border-color: var(--bs-border-color-translucent);
   --bs-offcanvas-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);

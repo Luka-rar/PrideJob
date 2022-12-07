@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{asset('site/custom.css')}}">
+    
 </head>
 <body>
   <!--Flash Message--> 
@@ -123,7 +124,8 @@
         </div>
     </div>
     @yield('content')
-  
+
+
 <script type="module" src="index.js"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>
 <script src="{{asset ('site/jquery.js')}}"></script>
