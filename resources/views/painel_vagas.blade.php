@@ -4,10 +4,10 @@
 <!--Cards-->
     <div class="container">
     <h1 class="mt-4 text-center" id="painel_text">Painel de vagas</h1>
-      <div class="row mt-5 text-center">
+      <div class="row mt-5 text-center justify-content-md-center">
         @foreach($vagas as $vaga)
-        <div class="card m-2 mb-5" style="max-width: 500px;">
-          <div class="row g-0">
+        <div class="card m-2 mb-5" style="max-width: 430px;">
+          <div class="row">
             <div class="col-md-4">
               <img src="{{asset('images/bandeiralgbt.jpg')}}" style="max-width: 400px;" class="img-fluid rounded-start" alt="...">
             </div>
