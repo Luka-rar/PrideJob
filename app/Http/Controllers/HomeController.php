@@ -25,8 +25,18 @@ class HomeController extends Controller
 
     public function painelVagas()
     {
-        $vagas = Vaga::all();
-       
-        return view('painel_vagas', ['vagas' => $vagas]);
+        $search = request('search');
+        
+        if($search){
+
+            $vagas = Vaga::where([
+                ['nome_empresa', 'like', '%'.$search.'%']
+            ])->get();
+
+        } else{
+            $vagas = Vaga::all();
+        }
+
+        return view('painel_vagas', ['vagas' => $vagas, 'search' => $search]);
     }
 }

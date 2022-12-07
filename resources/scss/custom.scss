@@ -13,10 +13,10 @@ $success: rgb(76, 248, 76);
     justify-content: flex-end;
 }
 
-@media (min-width: 992px){
+@media (min-width: 880px){
     .navbar-expand-lg .navbar-nav .nav-link{
         padding-right: 1.3rem;
-        padding-left: 1.3em;
+        padding-left: .3em;
     }
 }
 .dropdown-item:hover{

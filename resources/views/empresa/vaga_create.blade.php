@@ -32,7 +32,7 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Salário:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="salario"/>
+                        <input type="text" class="form-control mb-3" id="salario" name="salario"/>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -107,11 +107,19 @@
             </div>
         </form>
     </div>
-    <script src="{{asset ('site/jquery.js')}}"></script>
+<script src="{{asset ('site/jquery.js')}}"></script>
+<script src="{{asset ('site/js/mask.js')}}"></script>
+<script src="{{asset ('site/js/maskMoney.js')}}"></script>
+<script src="{{asset ('site/js/script.js')}}"></script>
     <script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function($){
+            $('#salario').maskMoney({
+              prefix:'R$ ',
+              allowNegative: true,
+              thousands:'.', decimal:',',
+              affixesStay: true});
 			$("#buttonCancel").on("click", function() {
-				window.location = "/empresas/dashboard";
+				window.location = "/";
 			});
 		});
 	</script>
