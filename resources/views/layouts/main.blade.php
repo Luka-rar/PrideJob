@@ -124,7 +124,8 @@
         </div>
     </div>
     @yield('content')
-  
+
+
 <script type="module" src="index.js"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>
 <script src="{{asset ('site/jquery.js')}}"></script>

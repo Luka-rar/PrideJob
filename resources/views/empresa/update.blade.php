@@ -76,4 +76,22 @@
             </div>
         </form>
     </div>
+<script src="{{asset ('site/jquery.js')}}"></script>
+<script src="{{asset ('site/js/mask.js')}}"></script>
+<script src="{{asset ('site/js/script.js')}}"></script>
+    <script type="text/javascript">
+		$(document).ready(function($){
+            $('#cep').mask('00000-000');
+            $('#telefone').mask('(00) 0000-0000');
+            $('#celular').mask('(00) 00000-0000');
+            $('#data-nascimento').mask('00/00/0000');
+            $('#data-rg').mask('00/00/0000');
+            $('#rg').mask('00.000.000-0');
+            $('#cpf').mask('000.000.000-00');
+            console.log('asaasasasasas');
+			$("#buttonCancel").on("click", function() {
+				window.location = "/";
+			});
+		});
+	</script>
   @endsection('content')

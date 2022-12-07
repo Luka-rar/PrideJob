@@ -1,8 +1,11 @@
 $body-bg: rgb(27, 27, 27);
 $body-color: white;
+$modal-content-bg: rgb(29, 29, 29);
+$modal-content-color: white;
 $primary: rgb(0, 119, 225);
 $font-family-sans-serif: 'Poppins', sans-serif;
 $success: rgb(76, 248, 76);
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 
@@ -24,6 +27,7 @@ $success: rgb(76, 248, 76);
     background-size: cover;
     background-attachment: fixed;
 }
+
 //Cards
 .card{
     border: none;   
