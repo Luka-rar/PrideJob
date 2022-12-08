@@ -21,11 +21,12 @@
       <div class="card-body">
         <h5 class="card-title">Vaga: #{{$vaga->id}}</h5>
           <p class="card-text">Categoria:<small class="text-muted"> {{$vaga->categoria}}</small></p>
-          <a href="/vagas/edit/{{ $vaga->id }}" class="btn btn-primary mb-2">Detalhes</a><br>
+          <a href="/vagas/list/candidatos/{{ $vaga->id }}" class="btn btn-primary mb-2 p-3" title="Ver detalhes"><i class="fa fa-lg fa-fw fa-eye"></i></a><br>
+          <a href="/vagas/edit/{{ $vaga->id }}" class="btn btn-warning mb-2 p-3" title="Editar"><i class="fa fa-lg fa-fw fa-edit"></i></a><br>
           <form action="/vagas/{{ $vaga->id }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-xs btn-default text-danger mx-1 shadow" title="Deletar">
+            <button type="submit" class="btn btn-xs btn-default text-danger mx-1 shadow p-3" title="Deletar">
                 <i class="fa fa-lg fa-fw fa-trash"></i>
             </button>
           </form>

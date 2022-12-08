@@ -65,10 +65,14 @@ Route::middleware(('client'))->group(function(){
     Route::get('client', function(){
         dd('Você é um client');
     });
+
     Route::get('/candidatos/create', [CandidatoController::class, 'create']);
     Route::post('/candidatos', [CandidatoController::class, 'store']);
     Route::get('/candidatos/edit', [CandidatoController::class, 'edit']);
     Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
+
+    Route::post('/vagas/join/{id}', [VagaController::class, 'joinVaga']);
+    Route::get('/vagas/pivo/{id}', [CandidatoController::class, 'updatePivo']);
 });
 
 //ROTAS DA EMPRESA
@@ -87,6 +91,7 @@ Route::middleware(('empresa'))->group(function(){
     Route::delete('/vagas/{id}', [VagaController::class, 'destroy']);
     Route::get('/vagas/edit/{id}', [VagaController::class, 'edit']);
     Route::put('/vagas/update/{id}', [VagaController::class, 'update']);
+    Route::get('/vagas/list/candidatos/{id}', [VagaController::class, 'listCandidatos']);
 });
 
 

@@ -23,6 +23,16 @@
             @endif
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('mg'))
+            <div class="alert alert-info msg text-center" role="alert">
+                <strong>👍 </strong>{{ session('mg')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
+    </div>
     <!--NavBar--> 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark mt-5"> 
@@ -67,7 +77,7 @@
                         @endif
                         @if(Auth::user()->candidato()->first() != [])
                         <li><a class="dropdown-item" href="/candidatos/edit/">Minha conta</a></li>
-                        <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+                        <li><a class="dropdown-item" href="/candidatos/dashboard">Dashboard</a></li>
                         @endif
                       @endif
 

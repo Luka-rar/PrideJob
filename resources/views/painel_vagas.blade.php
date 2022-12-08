@@ -78,7 +78,12 @@
                     <p class="card-text" id="cidade"></p>
                     <h5 class="card-title">Estado:</h5>
                     <p class="card-text" id="estado"></p>
-                    <a href="#" class="btn btn-primary">Tenho interesse</a>
+                    <form id="join" action="#" method="POST">
+                      @csrf
+                      <button id="join2" 
+                      class="btn btn-primary join2" type="submit"> 
+                      Tenho interesse</button>
+                    </form>
                   </div>
                 </div>
                   <div class="card-footer text-muted">
@@ -122,6 +127,12 @@
         $("#estado").text(estado);
 
 				$("#exemplo").modal('show');
+
+        $(".join2").on("click", function(e){
+          $('#join').attr('action', '/vagas/join/' + vaga_id);
+          $('#join2').attr('href', '/vagas/join/' + vaga_id);
+        });
+
 			});
 		});
 	</script>

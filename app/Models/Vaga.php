@@ -33,5 +33,8 @@ class Vaga extends Model
     public function user(){
         return $this->belongsTo('App\Models\Empresa');
     }
-   
+
+    public function candidatos(){
+        return $this->belongsToMany(Candidato::class);
+    }
 }

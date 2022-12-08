@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')
             ->constrained()
             ->onDelete('cascade');
-            $table->string('quantidade');
+            $table->integer('quantidade');
             $table->string('nome_empresa');
             $table->string('categoria');
             $table->string('tipo_vaga');

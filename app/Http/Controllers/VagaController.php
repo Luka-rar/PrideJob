@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vaga;
+use App\Models\Candidato;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -106,5 +107,35 @@ class VagaController extends Controller
     {
         Vaga::findOrFail($id)->delete();
         return redirect('/empresas/dashboard')->with('msg', 'Vaga com id: ' . $id . ' foi deletada com sucesso!');
+    }
+
+    public function joinVaga($id){
+        $candidato = auth()->user()->candidato()->first();
+
+        $vaga = Vaga::findOrFail($id);
+
+        $results = $vaga->candidatos()->get();
+        $aux = null;
+    
+        foreach($results as $result){
+            if($result->id == $candidato->id){ 
+                $aux = $result;
+            }
+        }
+        
+        if($aux == null){
+            $candidato->vagas()->attach([
+                $id => ['status' => 2]
+            ]);
+            return redirect('/')->with('msg', 'Sua inscrição está confirmada na vaga ' . $vaga->id);
+        } else{
+            dd('já inscrito!');
+        }   
+    }
+
+    public function listCandidatos($id){
+        $vaga = Vaga::findOrFail($id);
+        $inscritos = $vaga->candidatos()->get();
+        return view('empresa.candidato_vaga', ['inscritos' => $inscritos, 'vaga' => $vaga]);
     }
 }
