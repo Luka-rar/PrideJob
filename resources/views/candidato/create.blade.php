@@ -26,33 +26,33 @@
                             <label for="uf-rg" class="fw-semibold">UF-RG</label>
                             <select class="form-select" id="ur-rg" name="uf_rg">
                                 <option selected>Estado que emitiu o RG</option>
-                                <option value="1">AC</option>
-                                <option value="2">AL</option>
-                                <option value="3">AM</option>
-                                <option value="4">AP</option>
-                                <option value="5">BA</option>
-                                <option value="6">CE</option>
-                                <option value="7">DF</option>
-                                <option value="8">ES</option>
-                                <option value="9">GO</option>
-                                <option value="10">MA</option>
-                                <option value="11">MG</option>
-                                <option value="12">MS</option>
-                                <option value="13">MT</option>
-                                <option value="14">PA</option>
-                                <option value="15">PB</option>
-                                <option value="16">PE</option>
-                                <option value="17">PI</option>
-                                <option value="18">PR</option>
-                                <option value="19">RJ</option>
-                                <option value="20">RN</option>
-                                <option value="21">RO</option>
-                                <option value="22">RR</option>
-                                <option value="23">RS</option>
-                                <option value="24">SC</option>
-                                <option value="25">SE</option>
-                                <option value="26">SP</option>
-                                <option value="27">TO</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
                             </select>
                         </div>    
                         <div class="mb-3">
@@ -94,12 +94,12 @@
                             <label for="uf-rg" class="fw-semibold">Etnia:</label>
                             <select class="form-select" aria-label="Default select example" name="etnia">
                                 <option selected>Selecione Sua Etnia:</option>
-                                <option value="1">Preta</option>
-                                <option value="2">Indígena</option>
-                                <option value="3">Branca</option>
-                                <option value="4">Amarela</option>
-                                <option value="5">Parda</option>
-                                <option value="6">Não desejo informar</option>
+                                <option value="Preta">Preta</option>
+                                <option value="Indígena">Indígena</option>
+                                <option value="Branca">Branca</option>
+                                <option value="Amarela">Amarela</option>
+                                <option value="Parda">Parda</option>
+                                <option value="Não Informado">Não desejo informar</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -110,57 +110,57 @@
                             <label for="uf-rg" class="fw-semibold">UF - Nascimento</label>
                             <select class="form-select" id="ur-rg" name="uf_nascimento">
                                 <option selected>Estado em que nasceu</option>
-                                <option value="1">AC</option>
-                                <option value="2">AL</option>
-                                <option value="3">AM</option>
-                                <option value="4">AP</option>
-                                <option value="5">BA</option>
-                                <option value="6">CE</option>
-                                <option value="7">DF</option>
-                                <option value="8">ES</option>
-                                <option value="9">GO</option>
-                                <option value="10">MA</option>
-                                <option value="11">MG</option>
-                                <option value="12">MS</option>
-                                <option value="13">MT</option>
-                                <option value="14">PA</option>
-                                <option value="15">PB</option>
-                                <option value="16">PE</option>
-                                <option value="17">PI</option>
-                                <option value="18">PR</option>
-                                <option value="19">RJ</option>
-                                <option value="20">RN</option>
-                                <option value="21">RO</option>
-                                <option value="22">RR</option>
-                                <option value="23">RS</option>
-                                <option value="24">SC</option>
-                                <option value="25">SE</option>
-                                <option value="26">SP</option>
-                                <option value="27">TO</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
                             </select>
                         </div> <!---voltar pra add js de cidade onde nasceu-->
                         <div class="mb-3">
                         <label for="genre" class="fw-semibold">Estado Civil:</label>   
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estado_civil" id="solteiro">
+                                    <input class="form-check-input" type="radio" value="solteiro" name="estado_civil" id="solteiro">
                                     <label class="form-check-label" for="solteiro">
                                         Solteiro(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estado_civil" id="casado" checked>
+                                    <input class="form-check-input" type="radio" value="casado" name="estado_civil" id="casado" checked>
                                     <label class="form-check-label" for="casado">
                                         Casado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estado_civil" id="divorciado" checked>
+                                    <input class="form-check-input" type="radio" value="Divorciado(a)" name="estado_civil" id="divorciado" checked>
                                     <label class="form-check-label" for="divorciado">
                                         Divorciado(a)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estado_civil" id="viuvo" checked>
+                                    <input class="form-check-input" type="radio" value="Viúvo(a)" name="estado_civil" id="viuvo" checked>
                                     <label class="form-check-label" for="viuvo">
                                         Viúvo(a)
                                     </label>
@@ -216,33 +216,33 @@
                             <label for="estado" class="fw-semibold">Estado:</label>
                             <select class="form-select" name="estado" id="estado">
                                 <option selected>Estado em que nasceu</option>
-                                <option value="1">AC</option>
-                                <option value="2">AL</option>
-                                <option value="3">AM</option>
-                                <option value="4">AP</option>
-                                <option value="5">BA</option>
-                                <option value="6">CE</option>
-                                <option value="7">DF</option>
-                                <option value="8">ES</option>
-                                <option value="9">GO</option>
-                                <option value="10">MA</option>
-                                <option value="11">MG</option>
-                                <option value="12">MS</option>
-                                <option value="13">MT</option>
-                                <option value="14">PA</option>
-                                <option value="15">PB</option>
-                                <option value="16">PE</option>
-                                <option value="17">PI</option>
-                                <option value="18">PR</option>
-                                <option value="19">RJ</option>
-                                <option value="20">RN</option>
-                                <option value="21">RO</option>
-                                <option value="22">RR</option>
-                                <option value="23">RS</option>
-                                <option value="24">SC</option>
-                                <option value="25">SE</option>
-                                <option value="26">SP</option>
-                                <option value="27">TO</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
                             </select>
                 </div>
                     <input type="submit" value="Save" class="btn btn-primary m-3" /> <input

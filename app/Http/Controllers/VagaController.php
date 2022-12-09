@@ -53,10 +53,9 @@ class VagaController extends Controller
         $vaga->estado = $request->estado;
 
         $user = auth()->user();
-        $vaga->user_id = $user->id;
+        $vaga->user_id = $user->empresa()->first()->id;
         $vaga->nome_empresa = $user->empresa()->first()->nome_empresa;
         $vaga->save();
-
         return redirect('/empresas/dashboard')->with('msg','Vaga criada com sucesso!');
     }
 
@@ -127,7 +126,7 @@ class VagaController extends Controller
             $candidato->vagas()->attach([
                 $id => ['status' => 2]
             ]);
-            return redirect('/')->with('msg', 'Sua inscrição está confirmada na vaga ' . $vaga->id);
+            return redirect('/vagas/painel')->with('msg', 'Sua inscrição está confirmada na vaga' . $vaga->id);
         } else{
             dd('já inscrito!');
         }   

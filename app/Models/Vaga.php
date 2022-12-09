@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vaga extends Model
 {
-    use HasFactory;
+    
 
     protected $cast = [
         'items' => 'array'
@@ -28,10 +28,8 @@ class Vaga extends Model
         'estado'
     ];
 
-    protected $dates = ['date'];
-
-    public function user(){
-        return $this->belongsTo('App\Models\Empresa');
+    public function empresa(){
+        return $this->belongsTo(Empresa::class, 'id', 'user_id');
     }
 
     public function candidatos(){
