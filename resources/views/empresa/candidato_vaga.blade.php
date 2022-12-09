@@ -13,6 +13,7 @@
       <th scope="col">Email</th>
       <th scope="col">Telefone</th>
       <th scope="col">Celular</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,9 @@
       <td>{{$inscrito->email}}</td>
       <td>{{$inscrito->telefone}}</td>
       <td>{{$inscrito->celular}}</td>
+      <td>
+        <a href="/vagas/candidato/{{ $inscrito->id }}/{{ $vaga->id }}" class="btn btn-warning mb-2 p-3" title="ver"><i class="fa fa-lg fa-fw fa-eye"></i></a><br>
+      </td>
     </tr>
     @endforeach
   </tbody>

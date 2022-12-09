@@ -92,6 +92,7 @@ Route::middleware(('empresa'))->group(function(){
     Route::get('/vagas/edit/{id}', [VagaController::class, 'edit']);
     Route::put('/vagas/update/{id}', [VagaController::class, 'update']);
     Route::get('/vagas/list/candidatos/{id}', [VagaController::class, 'listCandidatos']);
+    Route::get('/vagas/candidato/{id}/{vaga}', [VagaController::class, 'verCandidato']);
 });
 
 

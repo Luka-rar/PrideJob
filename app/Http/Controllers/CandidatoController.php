@@ -109,8 +109,20 @@ class CandidatoController extends Controller
     }
     public function updatePivo($id){
         $candidato = auth()->user()->candidato()->first();
-        $candidato->vagas()->updateExistingPivot($id,
-        ['status' => 0]);
-        return redirect('/candidatos/dashboard')->with('mg','Vaga #' . $id . ' foi cancelada com sucesso!');
+        $status = null;
+        foreach($candidato->vagas as $vaga){
+            if($vaga->pivot->vaga_id == $id){
+                $status = $vaga->pivot->status;
+            }
+        }
+        if($status == 0){
+            return redirect('/candidatos/dashboard')->with('mg3','Vaga #' . $id . ' já foi cancelada!');
+        } else{
+            $candidato->vagas()->updateExistingPivot($id,
+            ['status' => 0]);
+            return redirect('/candidatos/dashboard')->with('mg','Vaga #' . $id . ' foi cancelada com sucesso!');
+        }
+        
+        
     }
 }

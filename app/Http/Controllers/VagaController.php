@@ -138,4 +138,10 @@ class VagaController extends Controller
         $inscritos = $vaga->candidatos()->get();
         return view('empresa.candidato_vaga', ['inscritos' => $inscritos, 'vaga' => $vaga]);
     }
+
+    public function verCandidato($id, $vaga){
+        $candidato = Candidato::findOrFail($id);
+        $vaga = Vaga::findOrFail($vaga);
+        return view('empresa.candidato_inscrito', ['candidato' => $candidato, 'vaga' => $vaga]);
+    }
 }

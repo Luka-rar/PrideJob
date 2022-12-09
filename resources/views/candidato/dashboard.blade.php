@@ -3,6 +3,7 @@
 @section('content')     
 <!--Card de Vagas concorridas-->
 <div class="container mt-5 mb-5 ">
+
    <h2 class="text-center fw-semibold mb-3">Vagas Concorridas</h2>
     @foreach($vagas as $vaga)
     <div class="card text-center mb-3">
@@ -33,35 +34,45 @@
                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                Cancelar Candidatura
                </button> -->
-               <a type="button" class="btn btn-primary" href="/vagas/pivo/{{$vaga->id}}">
-               Cancelar Candidatura
-              </a>
+               <a class="btn btn-primary link2" vaga="{{$vaga->id}}"
+                >Cancelar Inscrição</a>
         </div>
         <div class="card-footer text-muted">
            2 days ago
        </div>               
     </div>
     @endforeach
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-               <div class="modal-dialog">
-                   <div class="modal-content bg-dark">
-                   <div class="modal-header">
-                       <h1 class="modal-title fs-5" id="staticBackdropLabel">Você tem certeza?</h1>
-                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   </div>
-                   <div class="modal-body">
-                       Se você clicar em aceitar não poderá permanecer nesse processo seletivo, deseja finalizar?.
-                   </div>
-                   <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não, eu ainda quero me aplicar!!</button>
-                        <button type="submit" class="btn btn-secondary">Eu entendo e desejo sair do processo seletivo</button> 
-                   </div>
-                   </div>
-               </div>
-            </div>
 
-            <div class="modal fade text-center" id="exemplo">
+  
+    <div class="modal fade text-center" id="exemplo2">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="modalTitle2">Você tem certeza?</h4>
+						<button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+            <div class="card text-center">
+                  <div class="card-header">
+                    Atenção
+                  </div>
+                  <div class="card-body">
+                    Se você clicar em aceitar não poderá permanecer nesse processo seletivo, deseja finalizar?
+                    <a type="button" class="btn btn-secondary mt-3 cancelar" id="cancelar">
+                    Eu entendo e desejo sair do processo seletivo
+                    </a>
+                  </div>
+            </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger"
+							data-bs-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <div class="modal fade text-center" id="exemplo">
 			<div class="modal-dialog modal-dialog-scrollable">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -102,18 +113,16 @@
 				</div>
 			</div>
 		</div>
-
 </div>
 
 <!--Upload de Currículo-->
-
-<div class="container mt-3 mb-5">
-    <h2 class="text-center fw-semibold mb-3">Seu Currículo</h2>
-        <div class="input-group">
-        <input type="file" class="form-control dark-bg" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload">
-        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
-        </div>
-</div>
+  <div class="container mt-3 mb-5">
+      <h2 class="text-center fw-semibold mb-3">Seu Currículo</h2>
+          <div class="input-group">
+            <input type="file" class="form-control dark-bg" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload">
+            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+          </div>
+  </div>
 
 
 <script src="{{asset ('site/jquery.js')}}"></script>
@@ -155,4 +164,21 @@
 			});
 		});
 	</script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+
+      $(".link2").on("click", function(e){
+        e.preventDefault();
+		    link2 = $(this);
+        vaga = link2.attr("vaga");
+        $("#exemplo2").modal('show');
+      });
+
+      $(".cancelar").on("click", function(e){
+          $('#cancelar').attr('href', '/vagas/pivo/' + vaga);
+        });
+    });
+  </script>
 @endsection('content')

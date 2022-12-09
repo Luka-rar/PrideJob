@@ -33,6 +33,16 @@
             @endif
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('mg3'))
+            <div class="alert alert-warning msg text-center" role="alert">
+                <strong>⚠ </strong>{{ session('mg3')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
+    </div>
     <!--NavBar--> 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark mt-5"> 

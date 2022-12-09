@@ -44,6 +44,6 @@ class Candidato extends Model
 
     public function vagas(){
         return $this->belongsToMany(Vaga::class)
-            ->withPivot(['status']);
+            ->withPivot(['status', 'id', 'vaga_id']);
     }
 }
