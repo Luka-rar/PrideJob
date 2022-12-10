@@ -8,10 +8,16 @@
   </div>
   <div class="card-body">
   <form>
+    <div class="container text-center mt-3">
+        <a class="btn btn-success" href="/inscricao/efetuar/{{$candidato->id}}/{{$vaga->id}}">Efetuar inscrição</a>
+        <a class="btn btn-danger" href="/inscricao/finalizar/{{$candidato->id}}/{{$vaga->id}}">Finalizar Inscrição</a>
+        <a class="btn btn-secondary cancel" id="buttonCancel" id_vaga="{{$vaga->id}}">Voltar</a>
+    </div>
     <fieldset disabled>
               <div class="container mt-5 col-md-8 justify-content-md-center">
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
+                        
                         <div class="mb-3">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome Completo:</label>
                             <input type="text" class="form-control" name="nome_completo" id="nomecompleto" value="{{$candidato->nome_completo}}">
@@ -110,9 +116,9 @@
 </fieldset>
 </form>
 <div class="container text-center">
-    <button class="btn btn-danger">Ok</button>
-    <button class="btn btn-danger">Ok</button>
-    <button class="btn btn-danger">Ok</button>
+    <a class="btn btn-success mb-3" href="/inscricao/efetuar/{{$candidato->id}}/{{$vaga->id}}">Efetuar inscrição</a><br>
+    <a class="btn btn-danger mb-3" href="/inscricao/finalizar/{{$candidato->id}}/{{$vaga->id}}">Finalizar Inscrição</a><br>
+    <a class="btn btn-secondary mb-3 cancel" id="buttonCancel" id_vaga="{{$vaga->id}}">Voltar</a>
 </div>
   </div>
   <div class="card-footer text-muted">
@@ -120,7 +126,16 @@
   </div>
 </div>
 </div>
+<script src="{{asset ('site/jquery.js')}}"></script>
+    <script type="text/javascript">
+		$(document).ready(function($){
+			$(".cancel").on("click", function(e) {
+		        link = $(this);
+                id_vaga = link.attr("id_vaga");
+                console.log(id_vaga);
+                $('#buttonCancel').attr('href', '/vagas/list/candidatos/' + id_vaga);
+			});
 
-
-
+		});
+	</script>
 @endsection('content') 

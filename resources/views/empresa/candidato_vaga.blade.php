@@ -3,7 +3,16 @@
 @section('content')
 
 <div class="container mb-5">
-    <h4>Vaga - #ID: {{$vaga->id}}</h4>
+    <h4>Processo - #ID: {{$vaga->id}} -
+      @if($vaga->quantidade == 0)
+        <small class="text-danger"> Vagas esgotadas!</small>
+      @else
+        <small class="text-warning">Em andamento</small>
+      @endif
+    </h4>
+@if($inscritos->count() == 0)
+<h5 class="mb-5 mt-5 text-muted">Não há inscritos para esse processo no momento!<h5>
+@else
 <table class="table table-borderless caption-top table-striped table-hover">
 <caption>Lista de candidatos inscritos</caption>
   <thead class="table-light">
@@ -31,6 +40,7 @@
     @endforeach
   </tbody>
 </table>
+@endif
 </div>
 
 @endsection('content') 

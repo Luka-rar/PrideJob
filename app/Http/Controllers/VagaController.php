@@ -143,4 +143,61 @@ class VagaController extends Controller
         $vaga = Vaga::findOrFail($vaga);
         return view('empresa.candidato_inscrito', ['candidato' => $candidato, 'vaga' => $vaga]);
     }
+    public function mudarStatusInscricaoEfetuar($candidato, $vaga){
+        $candidato = Candidato::findOrFail($candidato);
+        $id_vaga = Vaga::findOrFail($vaga);
+        $status = null;
+
+        foreach($candidato->vagas as $vaga){
+            if($vaga->pivot->vaga_id == $id_vaga->id){
+                $status = $vaga->pivot->status;
+            }
+        }
+
+        if($status == 0){
+
+            return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('mg3','Inscrição já foi cancelada!');
+
+        } else if($status == 1){
+
+            return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('mg3','Candidato já foi efetuado nessa inscrição de vaga!');
+        } else{
+
+            if($id_vaga->quantidade > 0){
+
+                $candidato->vagas()->updateExistingPivot($id_vaga->id,
+                ['status' => 1]);
+
+                $quantidade = $id_vaga->quantidade - 1;
+
+                $vagaAlterada = Vaga::where(['id' => $id_vaga->id])->update(['quantidade' => $quantidade]);
+
+                return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('msg','Inscrição de candidato ID = ' . $candidato->id . ' foi efetuada com sucesso!');
+                
+            }else{
+                return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('mg4','Quantidade de vagas já atingiu o limite!');
+            }
+        }
+    }
+    public function mudarStatusInscricaoFinalizar($candidato, $vaga){
+        $candidato = Candidato::findOrFail($candidato);
+        $id_vaga = Vaga::findOrFail($vaga);
+        $status = null;
+
+        foreach($candidato->vagas as $vaga){
+            if($vaga->pivot->vaga_id == $id_vaga->id){
+                $status = $vaga->pivot->status;
+            }
+        }
+        
+        if($status == 0){
+            return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('mg3','Inscrição já foi cancelada!');
+
+        } else{
+            $candidato->vagas()->updateExistingPivot($id_vaga->id,
+                ['status' => 0]);
+
+            return redirect('/vagas/list/candidatos/' . $id_vaga->id)->with('mg','Inscrição de candidato ID = ' . $candidato->id . ' foi finalizada com sucesso!');
+        }
+    }
 }

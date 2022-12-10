@@ -86,6 +86,7 @@ Route::middleware(('empresa'))->group(function(){
     Route::get('/empresas/edit', [EmpresaController::class, 'edit']);
     Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
 
+    //Gerenciamento de candidatos
     Route::get('/vagas/create', [VagaController::class, 'create']);
     Route::post('/vagas', [VagaController::class, 'store']);
     Route::delete('/vagas/{id}', [VagaController::class, 'destroy']);
@@ -93,6 +94,10 @@ Route::middleware(('empresa'))->group(function(){
     Route::put('/vagas/update/{id}', [VagaController::class, 'update']);
     Route::get('/vagas/list/candidatos/{id}', [VagaController::class, 'listCandidatos']);
     Route::get('/vagas/candidato/{id}/{vaga}', [VagaController::class, 'verCandidato']);
+
+    //setando status da inscrição
+    Route::get('/inscricao/efetuar/{candidato}/{vaga}', [VagaController::class, 'mudarStatusInscricaoEfetuar']);
+    Route::get('/inscricao/finalizar/{candidato}/{vaga}', [VagaController::class, 'mudarStatusInscricaoFinalizar']);
 });
 
 

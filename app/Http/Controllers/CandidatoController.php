@@ -122,7 +122,5 @@ class CandidatoController extends Controller
             ['status' => 0]);
             return redirect('/candidatos/dashboard')->with('mg','Vaga #' . $id . ' foi cancelada com sucesso!');
         }
-        
-        
     }
 }

@@ -21,6 +21,12 @@
       <div class="card-body">
         <h5 class="card-title">Vaga: #{{$vaga->id}}</h5>
           <p class="card-text">Categoria:<small class="text-muted"> {{$vaga->categoria}}</small></p>
+          <p class="card-text">Quantidade:<small class="text-muted"> {{$vaga->quantidade}}</small></p>
+          @if($vaga->quantidade == 0)
+            <p class="card-text"><small class="text-danger">Vagas esgotadas!</small></p>
+          @else
+            <p class="card-text"><small class="text-warning">Processo em andamento!</small></p>
+          @endif
           <a href="/vagas/list/candidatos/{{ $vaga->id }}" class="btn btn-primary mb-2 p-3" title="Ver detalhes"><i class="fa fa-lg fa-fw fa-eye"></i></a><br>
           <a href="/vagas/edit/{{ $vaga->id }}" class="btn btn-warning mb-2 p-3" title="Editar"><i class="fa fa-lg fa-fw fa-edit"></i></a><br>
           <form action="/vagas/{{ $vaga->id }}" method="POST">

@@ -178,7 +178,7 @@
 
       $(".cancelar").on("click", function(e){
           $('#cancelar').attr('href', '/vagas/pivo/' + vaga);
-        });
+      });
     });
   </script>
 @endsection('content')
