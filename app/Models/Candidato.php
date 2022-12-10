@@ -41,4 +41,9 @@ class Candidato extends Model
     {
         return $this->belongsTo(User::class, 'user', 'id');
     }
+
+    public function vagas(){
+        return $this->belongsToMany(Vaga::class)
+            ->withPivot(['status', 'id', 'vaga_id']);
+    }
 }

@@ -3,8 +3,16 @@
 @section('content')
 <!--Cards-->
     <div class="container">
-    <h1 class="mt-4 text-center" id="painel_text">Painel de vagas</h1>
+    <h1 class="mt-4 text-center mb-3" id="painel_text">Painel de vagas</h1>
+    <form action="/vagas/painel" method="GET" class="container input-group mb-3 text-center" style="max-width: 430px;">
+      <input type="text" class="form-control" name="search" placeholder="Busque por uma empresa..." aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+      
       <div class="row mt-5 text-center justify-content-md-center">
+      @if($search)
+        <h5>Busca por: {{$search}}</h5>
+      @endif
         @foreach($vagas as $vaga)
         <div class="card m-2 mb-5" style="max-width: 430px;">
           <div class="row">
@@ -35,6 +43,11 @@
           </div>
         </div>
         @endforeach
+        @if(count($vagas) == 0 && $search)
+          <p class="mb-5">Não foi possível encontrar nenhum evento com {{ $search }}! <a href="/vagas/painel">Painel de vagas</p>
+        @elseif(count($vagas) == 0)
+          <p>Não há vagas disponíveis ainda.</p>
+        @endif
       </div>
     </div>
     <div class="modal fade text-center" id="exemplo">
@@ -65,7 +78,12 @@
                     <p class="card-text" id="cidade"></p>
                     <h5 class="card-title">Estado:</h5>
                     <p class="card-text" id="estado"></p>
-                    <a href="#" class="btn btn-primary">Tenho interesse</a>
+                    <form id="join" action="#" method="POST">
+                      @csrf
+                      <button id="join2" 
+                      class="btn btn-primary join2" type="submit"> 
+                      Tenho interesse</button>
+                    </form>
                   </div>
                 </div>
                   <div class="card-footer text-muted">
@@ -109,6 +127,12 @@
         $("#estado").text(estado);
 
 				$("#exemplo").modal('show');
+
+        $(".join2").on("click", function(e){
+          $('#join').attr('action', '/vagas/join/' + vaga_id);
+          $('#join2').attr('href', '/vagas/join/' + vaga_id);
+        });
+
 			});
 		});
 	</script>

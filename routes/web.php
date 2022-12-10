@@ -65,10 +65,14 @@ Route::middleware(('client'))->group(function(){
     Route::get('client', function(){
         dd('Você é um client');
     });
+
     Route::get('/candidatos/create', [CandidatoController::class, 'create']);
     Route::post('/candidatos', [CandidatoController::class, 'store']);
     Route::get('/candidatos/edit', [CandidatoController::class, 'edit']);
     Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
+
+    Route::post('/vagas/join/{id}', [VagaController::class, 'joinVaga']);
+    Route::get('/vagas/pivo/{id}', [CandidatoController::class, 'updatePivo']);
 });
 
 //ROTAS DA EMPRESA
@@ -82,11 +86,18 @@ Route::middleware(('empresa'))->group(function(){
     Route::get('/empresas/edit', [EmpresaController::class, 'edit']);
     Route::put('/empresas/update/{id}', [EmpresaController::class, 'update']);
 
+    //Gerenciamento de candidatos
     Route::get('/vagas/create', [VagaController::class, 'create']);
     Route::post('/vagas', [VagaController::class, 'store']);
     Route::delete('/vagas/{id}', [VagaController::class, 'destroy']);
     Route::get('/vagas/edit/{id}', [VagaController::class, 'edit']);
     Route::put('/vagas/update/{id}', [VagaController::class, 'update']);
+    Route::get('/vagas/list/candidatos/{id}', [VagaController::class, 'listCandidatos']);
+    Route::get('/vagas/candidato/{id}/{vaga}', [VagaController::class, 'verCandidato']);
+
+    //setando status da inscrição
+    Route::get('/inscricao/efetuar/{candidato}/{vaga}', [VagaController::class, 'mudarStatusInscricaoEfetuar']);
+    Route::get('/inscricao/finalizar/{candidato}/{vaga}', [VagaController::class, 'mudarStatusInscricaoFinalizar']);
 });
 
 

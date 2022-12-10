@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{asset('site/custom.css')}}">
-    
+    <script src="https://kit.fontawesome.com/82034f65d3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!--Flash Message--> 
@@ -18,6 +18,36 @@
             @if(session('msg'))
             <div class="alert alert-success msg text-center" role="alert">
                 <strong>👍 </strong>{{ session('msg')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('mg'))
+            <div class="alert alert-info msg text-center" role="alert">
+                <strong>👍 </strong>{{ session('mg')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('mg3'))
+            <div class="alert alert-warning msg text-center" role="alert">
+                <strong>⚠ </strong>{{ session('mg3')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('mg4'))
+            <div class="alert alert-danger msg text-center" role="alert">
+                <strong>⚠ </strong>{{ session('mg4')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
@@ -67,7 +97,7 @@
                         @endif
                         @if(Auth::user()->candidato()->first() != [])
                         <li><a class="dropdown-item" href="/candidatos/edit/">Minha conta</a></li>
-                        <li><a class="dropdown-item" href="#">Meu Currículo</a></li>
+                        <li><a class="dropdown-item" href="/candidatos/dashboard">Dashboard</a></li>
                         @endif
                       @endif
 
