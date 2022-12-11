@@ -2032,7 +2032,7 @@ progress {
   opacity: 1;
 }
 .form-control:disabled {
-  background-color: #3c3d3d;
+  background-color: #e9ecef;
   opacity: 1;
 }
 .form-control::file-selector-button {
@@ -10773,10 +10773,10 @@ textarea.form-control-lg {
   justify-content: flex-end;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 880px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1.3rem;
-    padding-left: 1.3em;
+    padding-left: 0.3em;
   }
 }
 .dropdown-item:hover {
