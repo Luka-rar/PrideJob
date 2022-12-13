@@ -258,6 +258,7 @@
             </div>
       </form>
   </div> 
+  
 <script src="{{asset ('site/jquery.js')}}"></script>
 <script src="{{asset ('site/js/mask.js')}}"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>
