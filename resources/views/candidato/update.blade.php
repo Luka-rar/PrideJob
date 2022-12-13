@@ -12,6 +12,10 @@
               @csrf
               @method('PUT')
               <div class="border border-secondary rounded p-3">
+                    <div class="mb-3">
+                        <label for="bairro" class="form-label fw-semibold">Seu currículo:</label>
+                        <input type="file" class="form-control dark" name="curriculo" id="inputGroupFile" >
+                    </div>
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
@@ -258,7 +262,7 @@
             </div>
       </form>
   </div> 
-  
+
 <script src="{{asset ('site/jquery.js')}}"></script>
 <script src="{{asset ('site/js/mask.js')}}"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>

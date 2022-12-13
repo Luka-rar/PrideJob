@@ -6,7 +6,11 @@
         <div class="container justify-content-md-center col-md-8">       
                 <div class="text-center">
                     <h2 class="fw-bold">Informações de Login</h2>
+                    @if(Auth::user()->candidato()->first() == [])
                     <a class="btn btn-secondary mt-3 mb-3" href="/candidatos/create">Cadastro</a>
+                    @else
+                    <a class="btn btn-secondary mt-3 mb-3" href="/candidatos/edit">Cadastro</a>
+                    @endif
                     <a class="btn btn-primary mt-3 mb-3" href="">Dados Login</a>
                 </div>
              <form action="/candidato/account/details/{{$user->id}}" method="POST" enctype="multipart/form-data">
