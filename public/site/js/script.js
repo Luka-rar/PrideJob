@@ -1,15 +1,19 @@
+
 const inputFile = 
-document.querySelector("#pictureinput");
+document.querySelector("#picture__input");
 const pictureImage =
-document.querySelector(".pictureimage");
+document.querySelector(".picture__image");
 const pictureImageTxt = "Escolha uma imagem";
+console.log(pictureImage);
 pictureImage.innerHTML = pictureImageTxt;
 const textNull = "";
 const user_url = inputFile.getAttribute("user_url");
-console.log(user_url);
+
+
 
 if(document.querySelector("#image")){
     pictureImage.innerHTML = textNull;
+    console.log("passou");
 };
 
 inputFile.addEventListener('change', function(e){

@@ -27,7 +27,7 @@
                                 @endif
                                 <input type="file" accept="image" class="picture__input" user_url="{{$user->photo}}" id="picture__input" name="photo"/>
                                 <span class="picture__image">
-
+                                    
                                 </span>
                             </label>
                         </div>
@@ -72,7 +72,6 @@
             $('#data-rg').mask('00/00/0000');
             $('#rg').mask('00.000.000-0');
             $('#cpf').mask('000.000.000-00');
-            console.log('asaasasasasas');
 			$("#buttonCancel").on("click", function() {
 				window.location = "/";
 			});
