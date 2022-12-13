@@ -1,6 +1,6 @@
-  @extends('layouts.home')
+@extends('layouts.home')
+    
 
-  @section('content')   
 <!--Cards-->
     <div class="container">
       <div class="row">
