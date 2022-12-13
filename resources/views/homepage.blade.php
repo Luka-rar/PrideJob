@@ -1,13 +1,13 @@
 @extends('layouts.home')
     
-
+@section('content')
 <!--Cards-->
     <div class="container">
       <div class="row">
         <div class="col-sm mt-5">
           <div class="card rellax" data-rellax-speed="4">
           <div class="card-icon"><i class="bi bi-person"></i></div>
-            <div class="card-body p-4 rounded-bottom">
+            <div class="card-body p-4 rounded-bottom" id="card">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
@@ -16,7 +16,7 @@
         <div class="col-sm mt-5">
           <div class="card">
           <div class="card-icon"><i class="bi bi-pen"></i></div>
-            <div class="card-body p-4 rounded-bottom">
+            <div class="card-body p-4 rounded-bottom" id="card">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
@@ -25,7 +25,7 @@
         <div class="col-sm mt-5 mb-5">
           <div class="card">
             <div class="card-icon"><i class="bi bi-emoji-heart-eyes"></i></div>
-            <div class="card-body p-4 rounded-bottom">
+            <div class="card-body p-4 rounded-bottom" id="card">
               <h5 class="card-title" >Conteúdo do site</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>

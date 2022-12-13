@@ -30,7 +30,8 @@ class User extends Authenticatable
         'password',
         'empresa',
         'client',
-        'admin'
+        'admin',
+        'photo'
     ];
 
     /**
@@ -69,7 +70,4 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $appends = [
-        'profile_photo_url',
-    ];
 }

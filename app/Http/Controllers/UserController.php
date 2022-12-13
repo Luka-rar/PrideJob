@@ -115,4 +115,47 @@ class UserController extends Controller
             echo "<p>Nome: {$user->name}  E-mail: {$user->email} </p>";
         }
     }
+
+    //Detalhes da conta
+    public function formEditConta(){
+        $user = Auth::user();
+        return view('candidato.contaUpdate', ['user' => $user]);
+    }
+    public function formEditContaUpdate(Request $request){
+        $user = User::findOrFail($request->id);
+        $imagePath = null;
+
+        if($request->photo != null){
+            if($request->hasfile('photo') && $request->file('photo')->isValid()){
+
+                $requestDoc = $request->photo;
+    
+                $extension = $requestDoc->extension();
+    
+    
+                $docName = md5($requestDoc->getClientOriginalName() . strtotime("now")) . "." . $extension;
+    
+                $requestDoc->move(public_path('images/profile_photo'), $docName);
+    
+                $imagePath = $docName;
+            }
+
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request['password']),
+                'photo' => $docName
+            ]);
+        } else{
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request['password'])
+            ]);
+        }
+
+        
+
+        return redirect('/candidato/account/details')->with('msg','Detalhes de conta editados com sucesso!');
+    }  
 }

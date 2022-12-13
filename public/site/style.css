@@ -10794,23 +10794,23 @@ textarea.form-control-lg {
 }
 
 .card-icon {
-  margin: 0 1em;
+  margin: 0 1em !important;
 }
 
 .card-icon i {
-  font-size: 3em;
+  font-size: 3em !important;
 }
 
 .card {
-  background-color: #53c375;
-  color: #fff;
-  padding: 3em 0;
-  border: 0;
-  border-radius: 4em 0;
-  background: linear-gradient(to left, #53c375 50%, black 50%);
-  background-size: 170%;
-  background-position: right;
-  transition: all 0.5s;
+  background-color: #53c375 !important;
+  color: #fff !important;
+  padding: 3em 0 !important;
+  border: 0 !important;
+  border-radius: 4em 0 !important;
+  background: linear-gradient(to left, #53c375 50%, black 50%) !important;
+  background-size: 170% !important;
+  background-position: right !important;
+  transition: all 0.5s !important;
 }
 
 .card:hover {

@@ -1,9 +1,44 @@
-const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios'
-window.addEventListener('', async ()=>{
-    const request = await fetch(urlUF)
-    const response = await request.json()
+const inputFile = 
+document.querySelector("#pictureinput");
+const pictureImage =
+document.querySelector(".pictureimage");
+const pictureImageTxt = "Escolha uma imagem";
+pictureImage.innerHTML = pictureImageTxt;
+const textNull = "";
+const user_url = inputFile.getAttribute("user_url");
+console.log(user_url);
 
-    console.log(response)
-})
+if(document.querySelector("#image")){
+    pictureImage.innerHTML = textNull;
+};
 
-console.log("Essa porra ta funcionando.")
+inputFile.addEventListener('change', function(e){
+    const inputTarget = e.target;
+    const file = inputTarget.files[0];
+
+    if(file){
+
+        if(document.querySelector("#image")){
+            document.querySelector("#image").remove("#image");
+        }
+
+        const reader = new FileReader();
+        reader.addEventListener('load', function(e) {
+            const readerTarget = e.target;
+
+            const img = document.createElement('img');
+            img.src = readerTarget.result;
+            img.classList.add('picture__img');
+
+            pictureImage.innerHTML = '';
+            pictureImage.appendChild(img);
+
+        });
+
+        reader.readAsDataURL(file);
+    } else{
+        pictureImage.innerHTML = pictureImageTxt;
+
+    }
+
+});
