@@ -6,8 +6,9 @@
     <title>Pride Job</title>
     <link rel="stylesheet" href="../scss/custom.scss">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{asset('site/custom.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{asset('site/style.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/82034f65d3.js" crossorigin="anonymous"></script>
 </head>
@@ -66,7 +67,7 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
-                  <li class="nav-item text-light">
+                  <li class="nav-item">
                     <a class="nav-link" href="#">Conheça o Pride Job</a>
                   </li>
                   <li class="nav-item">
@@ -89,7 +90,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ Auth::user()->name }}
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark drop">
+                    <ul class="dropdown-menu dropdown-menu-dark">
 
                       @if(Auth::user()->client == 1)
                         @if(Auth::user()->candidato()->first() == [])
@@ -182,14 +183,14 @@
         <ul class="info">
           <li>
             <span><i class="fa-solid fa-location-dot"></i></span><br>
-            <span>Av. unheca, 2461 -<br> Cidade Blablabla <br>, São Paulo - SP, 06969-420</span>
+            <span>Rua dos bobos, 0 -<br> Cidade Blablabla <br>, São Paulo - SP, 06969-420</span>
           </li>
           <li>
-            <span><i><img  src="../assets/telephone.svg" width="30px"></i></span>
+            <span><i class="fa-solid fa-phone"></i></span>
             <p><a href="#">(11) 4206969</a><br></p>
           </li>
           <li>
-            <span><i><img  src="../assets/envelope-open-fill.svg" width="30px"></i></span>
+            <span><i class="fa-solid fa-envelope"></i></span>
             <p><a href="#">pridejob@pride.job</a></p>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 const inputFile = 
-document.querySelector("#picture__input");
+document.querySelector("#pictureinput");
 const pictureImage =
-document.querySelector(".picture__image");
+document.querySelector(".pictureimage");
 const pictureImageTxt = "Escolha uma imagem";
 pictureImage.innerHTML = pictureImageTxt;
 const textNull = "";
@@ -15,7 +15,7 @@ if(document.querySelector("#image")){
 inputFile.addEventListener('change', function(e){
     const inputTarget = e.target;
     const file = inputTarget.files[0];
-    
+
     if(file){
 
         if(document.querySelector("#image")){
@@ -38,8 +38,7 @@ inputFile.addEventListener('change', function(e){
         reader.readAsDataURL(file);
     } else{
         pictureImage.innerHTML = pictureImageTxt;
-        
+
     }
 
 });
-

@@ -23,11 +23,11 @@
                             <input type="text" class="form-control" name="nome_completo" id="nomecompleto" placeholder="Digite seu Nome Completo" value="{{Auth::user()->candidato()->first()->nome_completo}}">
                         </div>
                         <div class="mb-3">
-                            <label for="cpf" class="form-label fw-semibold">CPF:</label>
+                            <label for="cpf" class="form-label fw-semibold cpf">CPF:</label>
                             <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite seu CPF" value="{{Auth::user()->candidato()->first()->cpf}}">
                         </div>
                         <div class="mb-3">
-                            <label for="rg" class="form-label fw-semibold">RG:</label>
+                            <label for="rg" class="form-label fw-semibold rg">RG:</label>
                             <input type="text" class="form-control" name="rg" id="rg" placeholder="Digite seu RG" value="{{Auth::user()->candidato()->first()->rg}}">
                         </div>
                         <div class="mb-3" >
@@ -68,7 +68,7 @@
                             <input type="text" class="form-control" name="orgao_emissor" id="oe-rg" placeholder="Órgão Emissor do seu RG" value="{{Auth::user()->candidato()->first()->orgao_emissor}}">
                         </div>
                         <div class="mb-3">
-                            <label for="data-rg" class="form-label fw-semibold">Data de Emissão - RG:</label>
+                            <label for="data-rg" class="form-label fw-semibold data">Data de Emissão - RG:</label>
                             <input type="text" class="form-control" name="data_emissao" id="data-rg" placeholder="DD/MM/AAAA" value="{{Auth::user()->candidato()->first()->data_emissao}}">
                         </div>
                         <div class="mb-3">
@@ -111,7 +111,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="data-nascimento" class="form-label fw-semibold">Data de Nascimento:</label>
+                            <label for="data-nascimento" class="form-label fw-semibold data">Data de Nascimento:</label>
                             <input type="text" class="form-control" id="data-nascimento" name="data_nascimento" placeholder="DD/MM/AAAA" value="{{Auth::user()->candidato()->first()->data_nascimento}}">
                         </div>
                         <div class="mb-3" >
@@ -186,11 +186,11 @@
                 <h3 class="Display-6">Contato</h3>    
                 <h4>Telefone</h4>
                         <div class="mb-3">
-                                    <label for="celular" class="form-label fw-semibold">Celular:</label>
+                                    <label for="celular" class="form-label fw-semibold celular">Celular:</label>
                                     <input type="text" class="form-control" name="celular" id="celular" placeholder="() 00000-0000" value="{{Auth::user()->candidato()->first()->celular}}">
                         </div>
                         <div class="mb-3">
-                                    <label for="telefone" class="form-label fw-semibold">Telefone:</label>
+                                    <label for="telefone" class="form-label fw-semibold telefone">Telefone:</label>
                                     <input type="text" class="form-control" name="telefone" id="telefone" placeholder="() 00000-0000" value="{{Auth::user()->candidato()->first()->telefone}}">
                         </div>
                 <h4>Email</h4>
@@ -200,7 +200,7 @@
                 </div>
                 <h4>Endereço</h4>
                 <div class="mb-3">
-                    <label for="cep" class="form-label fw-semibold">CEP:</label>
+                    <label for="cep" class="form-label fw-semibold cep">CEP:</label>
                     <input type="text" class="form-control" name="cep" id="cep" placeholder="00000-000" value="{{Auth::user()->candidato()->first()->cep}}">
                 </div>
                 <div class="mb-3">
@@ -281,4 +281,7 @@
 			});
 		});
 	</script>
+  <script type="text/javascript">
+      console.log("WE ARE YOUNNNG")
+  </script>
 @endsection('content')

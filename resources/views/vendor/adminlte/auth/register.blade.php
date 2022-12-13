@@ -29,7 +29,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="empresa" id="flexRadioDefault2" value=0>
                     <label class="form-check-label" for="flexRadioDefault2">
-                        Cliente
+                        Candidato
                     </label>
                 </div>
                     

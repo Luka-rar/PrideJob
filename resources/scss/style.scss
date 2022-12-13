@@ -8,9 +8,12 @@ $success: rgb(76, 248, 76);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-
 .navbar-collapse {
     justify-content: flex-end;
+}
+
+.navbar:hover{
+    color: rgb(249,219,3);
 }
 
 @media (min-width: 880px){
@@ -28,88 +31,34 @@ $success: rgb(76, 248, 76);
     background-attachment: fixed;
 }
 
-//Formulário de usuário
-.picture__input{
-    display: none;
-}
-.user_picture{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:rgb(46, 45, 45);
-    color: #999;
-    border: 2px dashed #aaa;
-    cursor: pointer;
-    text-align: center;
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
-}
-.user_picture:hover{
-    background-color:rgb(24, 24, 24);
-}
-.picture__img{
-    width: 200px;
-    height: 200px;
-    max-width: 100%;
-    border-radius: 50%;
+
+
+//Cards 
+.card-icon {
+    margin: 0 1em;
+
 }
 
-//Cards
-.card-icon{
-    margin: 0 1em;
-}
 
 .card-icon i{
     font-size: 3em;
 }
 
 .card{
-    border: none;   
-    background-color: #2e2e2e;
-  
-}
-.card-body{
-    background: #2e2e2e;
-}
-
-// Sobre a empresa
-#about-area {
-    background-color: rgb(27, 27, 27);
+background-color: #53c375;
+color: #fff;
+padding: 3em 0;
+border:0;
+border-radius: 4em 0;
+background: linear-gradient(to left, #53c375 50%, black 50%);
+background-size: 170%;
+background-position: right;
+transition: all .5s;
 }
 
-
-//teste
-
-
-
-.main-title {
-    color: #fffefe;
-    margin: 0 0 65px 0;
-    font-size: 40px;
-    text-align: center;
+.card:hover{
+    background-position: left;
 }
-
-.about-title {
-    font-size: 17px;
-    text-transform: uppercase;
-}
-
-#about-list{
-    list-style: none;
-    padding-left: 0;
-}
-
-#about-list li{
-    line-height: 30px;
-}
-
-#about-list i {
-    color: aqua;
-    margin-right: 15px;
-}
-
 
 
 //construção do footer

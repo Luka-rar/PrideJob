@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix
 .sass('resources/scss/custom.scss','public/site/custom.css')
+.sass('resources/scss/style.scss','public/site/style.css')
+
 .copy('resources/img','public/images')
 
 .scripts(['resources/js/jQuery-Mask/dist/jquery.mask.min.js'],'public/site/js/mask.js')

@@ -15,7 +15,7 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">CEP:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="cep"/>
+                        <input type="text" id="cep"class="form-control mb-3" name="cep"/>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Cargo:</label>
+                    <label class="col-sm-4 col-form-label">Cargo do contato:</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control mb-3" name="cargo"/>
                     </div>
@@ -55,15 +55,15 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Telefone:</label>
+                    <label class="col-sm-4 col-form-label telefone">Telefone:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="telefone"/>
+                        <input type="text" id="telefone" class="form-control mb-3" name="telefone"/>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Celular:</label>
+                    <label class="col-sm-4 col-form-label celular">Celular:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="celular"/>
+                        <input type="text" id="celular" class="form-control mb-3" name="celular"/>
                     </div>
                 </div>  
                 
