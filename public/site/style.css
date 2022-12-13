@@ -10773,6 +10773,10 @@ textarea.form-control-lg {
   justify-content: flex-end;
 }
 
+.navbar:hover {
+  color: rgb(249, 219, 3);
+}
+
 @media (min-width: 880px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1.3rem;
@@ -10798,42 +10802,19 @@ textarea.form-control-lg {
 }
 
 .card {
-  border: none;
-  background-color: #2e2e2e;
+  background-color: #53c375;
+  color: #fff;
+  padding: 3em 0;
+  border: 0;
+  border-radius: 4em 0;
+  background: linear-gradient(to left, #53c375 50%, black 50%);
+  background-size: 170%;
+  background-position: right;
+  transition: all 0.5s;
 }
 
-.card-body {
-  background: #2e2e2e;
-}
-
-#about-area {
-  background-color: rgb(27, 27, 27);
-}
-
-.main-title {
-  color: #fffefe;
-  margin: 0 0 65px 0;
-  font-size: 40px;
-  text-align: center;
-}
-
-.about-title {
-  font-size: 17px;
-  text-transform: uppercase;
-}
-
-#about-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-#about-list li {
-  line-height: 30px;
-}
-
-#about-list i {
-  color: aqua;
-  margin-right: 15px;
+.card:hover {
+  background-position: left;
 }
 
 footer {

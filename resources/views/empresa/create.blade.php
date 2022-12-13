@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Cargo:</label>
+                    <label class="col-sm-4 col-form-label">Cargo do contato:</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control mb-3" name="cargo"/>
                     </div>
