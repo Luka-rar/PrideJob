@@ -22,9 +22,10 @@ return new class extends Migration
             $table->boolean('client');
             $table->boolean('admin');
             $table->boolean('empresa');
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('profile_photo_path')->nullable();
             $table->timestamps();
         });
     }

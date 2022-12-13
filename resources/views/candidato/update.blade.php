@@ -2,12 +2,16 @@
 
 @section('content')
 <!--Iniciando o cadastro-->
-<div id="about-area mt-5 mb-5">
-        <div class="container">
-                <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
+        <div class="container justify-content-md-center col-md-8">
+            <div class="text-center">
+                    <h2 class="fw-bold">Informações cadastrais</h2>
+                    <a class="btn btn-primary mt-3 mb-3">Cadastro</a>
+                    <a class="btn btn-secondary mt-3 mb-3" href="/candidato/account/details">Dados Login</a>
+            </div>
              <form action="/candidatos/update/{{ Auth::user()->candidato()->first()->id }}" method="POST">
               @csrf
               @method('PUT')
+              <div class="border border-secondary rounded p-3">
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
@@ -251,9 +255,9 @@
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
+            </div>
       </form>
-  </div>  
-</div>
+  </div> 
 <script src="{{asset ('site/jquery.js')}}"></script>
 <script src="{{asset ('site/js/mask.js')}}"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>

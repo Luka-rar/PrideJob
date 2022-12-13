@@ -116,12 +116,12 @@
 </div>
 
 <!--Upload de Currículo-->
-  <div class="container mt-3 mb-5">
+  <div class="container text-center mt-3 mb-5">
       <h2 class="text-center fw-semibold mb-3">Seu Currículo</h2>
           <div class="input-group">
-            <input type="file" class="form-control dark-bg" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload">
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+            <input type="file" class="form-control dark-bg mb-3" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload"></br>
           </div>
+          <a tipe="button" class="btn btn-secondary" href="/images/curriculos/{{Auth::user()->candidato()->first()->curriculo}}" download>Download</a>
   </div>
 
 

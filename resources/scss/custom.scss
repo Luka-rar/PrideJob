@@ -28,6 +28,34 @@ $success: rgb(76, 248, 76);
     background-attachment: fixed;
 }
 
+//Formulário de usuário
+.picture__input{
+    display: none;
+}
+.user_picture{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(46, 45, 45);
+    color: #999;
+    border: 2px dashed #aaa;
+    cursor: pointer;
+    text-align: center;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}
+.user_picture:hover{
+    background-color:rgb(24, 24, 24);
+}
+.picture__img{
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
 //Cards
 .card{
     border: none;   

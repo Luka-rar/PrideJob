@@ -3,16 +3,24 @@
 @section('content')
 <!--Iniciando o cadastro-->
 
-<div id="about-area mt-5 mb-5">
-        <div class="container">
-                <h2 class="main-title fw-semibold ">Continue o cadastro...</h2>
-             <form action="/candidatos" method="POST">
+        <div class="container justify-content-md-center col-md-8">       
+                <div class="text-center">
+                    <h2 class="fw-bold">Continue o cadastro...</h2>
+                    <a class="btn btn-primary mt-3 mb-3">Cadastro</a>
+                    <a class="btn btn-secondary mt-3 mb-3" href="/candidato/account/details">Dados Login</a>
+                </div>
+             <form action="/candidatos" method="POST" enctype="multipart/form-data">
               @csrf
+              <div class="border border-secondary rounded p-3">
+                    <div class="mb-3">
+                        <label for="bairro" class="form-label fw-semibold">Seu currículo:</label>
+                        <input type="file" class="form-control dark" name="curriculo" id="inputGroupFile" >
+                    </div>
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>
                         <div class="mb-3">
                             <label for="nomecompleto" class="form-label fw-semibold">Nome Completo:</label>
-                            <input type="text" class="form-control" name="nome_completo" id="nomecompleto" placeholder="Digite seu Nome Completo">
+                            <input type="text" class="form-control" name="nome_completo" id="nomecompleto" value="{{$user->name}}" placeholder="Digite seu Nome Completo">
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label fw-semibold">CPF:</label>
@@ -188,7 +196,7 @@
                 <h4>Email</h4>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label fw-semibold">Email:</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email" value="{{$user->email}}">
                 </div>
                 <h4>Endereço</h4>
                 <div class="mb-3">
@@ -245,16 +253,15 @@
                                 <option value="TO">TO</option>
                             </select>
                 </div>
-                    <input type="submit" value="Save" class="btn btn-primary m-3" /> <input
-                        type="button" value="Cancel" class="btn btn-secondary"
-                        id="buttonCancel" />   
+                    <input type="submit" value="Save" class="btn btn-primary m-3" />
+                    <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />   
                 <div>
                     <label for="cidade" class="fw-semibold"></label>
                 </div>
-            </div>    
+            </div>
+        </div>    
       </form>
   </div>  
-</div>
 <script src="{{asset ('site/jquery.js')}}"></script>
 <script src="{{asset ('site/js/mask.js')}}"></script>
 <script src="{{asset ('site/js/script.js')}}"></script>

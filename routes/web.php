@@ -70,9 +70,11 @@ Route::middleware(('client'))->group(function(){
     Route::post('/candidatos', [CandidatoController::class, 'store']);
     Route::get('/candidatos/edit', [CandidatoController::class, 'edit']);
     Route::put('/candidatos/update/{id}', [CandidatoController::class, 'update']);
-
     Route::post('/vagas/join/{id}', [VagaController::class, 'joinVaga']);
     Route::get('/vagas/pivo/{id}', [CandidatoController::class, 'updatePivo']);
+
+    Route::get('/candidato/account/details', [UserController::class, 'formEditConta']);
+    Route::put('/candidato/account/details/{id}', [UserController::class, 'formEditContaUpdate']);
 });
 
 //ROTAS DA EMPRESA

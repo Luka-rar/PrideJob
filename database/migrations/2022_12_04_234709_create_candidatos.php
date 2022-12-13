@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('candidatos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user');
+            $table->string('curriculo')->nullable();
             $table->string('nome_completo');
             $table->string('cpf');
             $table->string('rg');

@@ -21,7 +21,8 @@ class CandidatoController extends Controller
     
     public function create()
     {
-        return view('candidato.create');
+        $user = Auth::user();
+        return view('candidato.create', ['user' => $user]);
     }
 
     public function dashboard(){
@@ -56,7 +57,21 @@ class CandidatoController extends Controller
         $candidato['bairro'] = $request->bairro;
         $candidato['estado'] = $request->estado;
         $candidato['user'] = Auth::user()->id;
-    
+        
+        //doc upload
+        if($request->hasfile('curriculo') && $request->file('curriculo')->isValid()){
+
+            $requestDoc = $request->curriculo;
+
+            $extension = $requestDoc->extension();
+
+
+            $docName = md5($requestDoc->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestDoc->move(public_path('images/curriculos'), $docName);
+
+            $candidato['curriculo'] = $docName;
+        }
         Auth::user()->candidato()->create($candidato);
 
         return redirect('/')->with('msg','Candidato cadastrado com sucesso!');
