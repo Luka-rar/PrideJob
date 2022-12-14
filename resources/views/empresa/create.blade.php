@@ -9,7 +9,7 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Nome da empresa:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control mb-3" name="nome_empresa"/>
+                        <input type="text" class="form-control mb-3" name="nome_empresa" value="{{$empresa->name}}"/>
                     </div>
                 </div>
                 <div class="form-group row">

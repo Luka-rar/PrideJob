@@ -121,7 +121,7 @@ class VagaController extends Controller
                 $aux = $result;
             }
         }
-        
+
         if($aux == null){
             $candidato->vagas()->attach([
                 $id => ['status' => 2]

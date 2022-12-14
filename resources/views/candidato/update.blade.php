@@ -8,13 +8,14 @@
                     <a class="btn btn-primary mt-3 mb-3">Cadastro</a>
                     <a class="btn btn-secondary mt-3 mb-3" href="/candidato/account/details">Dados Login</a>
             </div>
-             <form action="/candidatos/update/{{ Auth::user()->candidato()->first()->id }}" method="POST">
+             <form action="/candidatos/update/{{ Auth::user()->candidato()->first()->id }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="border border-secondary rounded p-3">
                     <div class="mb-3">
                         <label for="bairro" class="form-label fw-semibold">Seu currículo:</label>
-                        <input type="file" class="form-control dark" name="curriculo" id="inputGroupFile" >
+                        <input type="file" class="form-control dark" name="curriculo" id="inputGroupFile">
+                        <a tipe="button" class="btn btn-secondary mt-3" href="/images/curriculos/{{Auth::user()->candidato()->first()->curriculo}}" download><span class="mt-3">Currículo Atual</span></a>
                     </div>
                     <div class="pessoais-content ">               
                         <h3 class="Display-6">Pessoais</h3>

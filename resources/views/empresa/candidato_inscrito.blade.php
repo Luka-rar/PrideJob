@@ -11,6 +11,7 @@
     <div class="container text-center mt-3">
         <a class="btn btn-success" href="/inscricao/efetuar/{{$candidato->id}}/{{$vaga->id}}">Efetuar inscrição</a>
         <a class="btn btn-danger" href="/inscricao/finalizar/{{$candidato->id}}/{{$vaga->id}}">Finalizar Inscrição</a>
+        <a class="btn btn-secondary" href="/images/curriculos/{{$candidato->curriculo}}" download>Currículo</a>
         <a class="btn btn-secondary cancel" id="buttonCancel" id_vaga="{{$vaga->id}}">Voltar</a>
     </div>
     <fieldset disabled>

@@ -17,12 +17,14 @@ class EmpresaController extends Controller
     }
 
     public function create(){
-        return view('empresa.create');
+        $empresa = auth()->user();
 
+        return view('empresa.create', ['empresa' => $empresa]);
     }
+
     public function dashboard(){
         $empresa = auth()->user()->empresa()->first();
-        
+
         $vagas = $empresa->vagas()->get();
 
         return view('empresa.dashboard', ['vagas' => $vagas]);
