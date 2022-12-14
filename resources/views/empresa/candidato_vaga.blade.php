@@ -22,6 +22,7 @@
       <th scope="col">Email</th>
       <th scope="col">Telefone</th>
       <th scope="col">Celular</th>
+      <th scope="col">Currículo</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -34,8 +35,12 @@
       <td>{{$inscrito->telefone}}</td>
       <td>{{$inscrito->celular}}</td>
       <td>
+        <a class="btn btn-secondary" href="/images/curriculos/{{$inscrito->curriculo}}" download>Download</a>
+      </td>
+      <td>
         <a href="/vagas/candidato/{{ $inscrito->id }}/{{ $vaga->id }}" class="btn btn-warning mb-2 p-3" title="ver"><i class="fa fa-lg fa-fw fa-eye"></i></a><br>
       </td>
+      <td>
     </tr>
     @endforeach
   </tbody>
