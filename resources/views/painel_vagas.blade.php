@@ -16,8 +16,8 @@
         @foreach($vagas as $vaga)
         <div class="card m-2 mb-5" style="max-width: 430px;">
           <div class="row">
-            <div class="col-md-4">
-              <img src="{{asset('images/bandeiralgbt.jpg')}}" style="max-width: 400px;" class="img-fluid rounded-start" alt="...">
+            <div class="col-md-4 g-0">
+              <img src="{{asset('images/teste03.jpg')}}" style="max-width: 400px;" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">

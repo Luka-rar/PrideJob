@@ -32,7 +32,7 @@
                         Candidato
                     </label>
                 </div>
-                    
+                
                     <input class="form-check-input" type="hidden" name="admin" id="flexRadioDefault2" value=0>
                     <input class="form-check-input" type="hidden" name="client" id="flexRadioDefault2" value=0>
             </div>

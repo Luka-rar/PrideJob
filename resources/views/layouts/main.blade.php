@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../scss/custom.scss">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{asset('site/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('site/custom.css')}}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/82034f65d3.js" crossorigin="anonymous"></script>
 </head>
@@ -148,8 +148,8 @@
     </div>
     <div class="container-fluid custombg mt-5 mb-5">
         <div class="container pt-5 pb-5">
-          <h1 class="fw-bold text-dark">Faça parte da comunidade PrideJob</h1>
-          <p class="text-dark subhead fs-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h1 class="fw-bold ">Faça parte da comunidade PrideJob</h1>
+          <p class="subhead fs-4 mb-0">Aqui é um lugar onde você tem a liberdade de ser criativo. Não tenha medo de ser quem é. Seja muito bem vindo ao Pride Job.</p>
 
         </div>
     </div>

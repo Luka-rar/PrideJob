@@ -1,7 +1,8 @@
 {
     "/site/style.css": "/site/style.css",
-    "/site/custom.css": "/site/custom.css",
     "/images/bandeiralgbt.jpg": "/images/bandeiralgbt.jpg",
+    "/images/curriculos/0b63388867bf0f5239cb3c54f7736e68.pdf": "/images/curriculos/0b63388867bf0f5239cb3c54f7736e68.pdf",
+    "/images/curriculos/2a109c1ca8f72a864d2a437cbd172390.pdf": "/images/curriculos/2a109c1ca8f72a864d2a437cbd172390.pdf",
     "/images/curriculos/548f2c1455e44a1a38c416965c5ff467.pdf": "/images/curriculos/548f2c1455e44a1a38c416965c5ff467.pdf",
     "/images/inclusao.jpg": "/images/inclusao.jpg",
     "/images/inclusão.jpg": "/images/inclusão.jpg",
@@ -10,10 +11,22 @@
     "/images/logo_com_fundo.png": "/images/logo_com_fundo.png",
     "/images/pexels-alexander-grey-1191710.jpg": "/images/pexels-alexander-grey-1191710.jpg",
     "/images/profile_photo/0f25da4883350148d012c8bd57678065.jpg": "/images/profile_photo/0f25da4883350148d012c8bd57678065.jpg",
+    "/images/profile_photo/c564ff372c0577e0b05fa41e8093b911.jpg": "/images/profile_photo/c564ff372c0577e0b05fa41e8093b911.jpg",
+    "/images/profile_photo/ce1d5919a703cce653c6313a3eb821db.jpg": "/images/profile_photo/ce1d5919a703cce653c6313a3eb821db.jpg",
+    "/images/sketchbook_8.7.1.0_win64.exe": "/images/sketchbook_8.7.1.0_win64.exe",
+    "/images/sketchbook_8.7.1.0_win64.exe.opdownload": "/images/sketchbook_8.7.1.0_win64.exe.opdownload",
     "/images/teste.jpg": "/images/teste.jpg",
+    "/images/teste001.jpg": "/images/teste001.jpg",
+    "/images/teste004.jpeg": "/images/teste004.jpeg",
+    "/images/teste01.jpg": "/images/teste01.jpg",
+    "/images/teste02.jpg": "/images/teste02.jpg",
+    "/images/teste02.jpg.opdownload": "/images/teste02.jpg.opdownload",
+    "/images/teste03.jpg": "/images/teste03.jpg",
     "/site/js/mask.js": "/site/js/mask.js",
     "/site/js/maskMoney.js": "/site/js/maskMoney.js",
     "/site/js/script.js": "/site/js/script.js",
     "/site/jquery.js": "/site/jquery.js",
-    "/site/bootstrap.js": "/site/bootstrap.js"
+    "/site/bootstrap.js": "/site/bootstrap.js",
+    "/site/custom.css": "/site/custom.css",
+    "/images/teste004.jpg": "/images/teste004.jpg"
 }

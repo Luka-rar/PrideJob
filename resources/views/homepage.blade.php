@@ -8,8 +8,7 @@
           <div class="card rellax" data-rellax-speed="4">
           <div class="card-icon"><i class="bi bi-person"></i></div>
             <div class="card-body p-4 rounded-bottom" id="card">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="card-text fw-bold">O grande segredo de uma vida boa é descobrir qual é seu destino e realizá-lo. Que você possa encontrar o seu aqui.</p>
             </div>
           </div>
         </div>
@@ -17,8 +16,7 @@
           <div class="card">
           <div class="card-icon"><i class="bi bi-pen"></i></div>
             <div class="card-body p-4 rounded-bottom" id="card">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="card-text fw-bold">Incluir significa promover e reconhecer o potencial inerente a todo ser humano em sua maior expressão: A diferença!</p>
             </div>
           </div>
         </div>
@@ -26,8 +24,7 @@
           <div class="card">
             <div class="card-icon"><i class="bi bi-emoji-heart-eyes"></i></div>
             <div class="card-body p-4 rounded-bottom" id="card">
-              <h5 class="card-title" >Conteúdo do site</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="card-text fw-bold">Uma verdadeira inclusão é provada em ações que realmente abracem a diversidade! ﾠﾠ</p>
             </div>
           </div>
         </div>
