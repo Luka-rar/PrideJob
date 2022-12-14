@@ -9,8 +9,6 @@ pictureImage.innerHTML = pictureImageTxt;
 const textNull = "";
 const user_url = inputFile.getAttribute("user_url");
 
-
-
 if(document.querySelector("#image")){
     pictureImage.innerHTML = textNull;
     console.log("passou");

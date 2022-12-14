@@ -108,7 +108,29 @@ class CandidatoController extends Controller
      */
     public function update(Request $request)
     {
-        $candidato = Candidato::findOrFail($request->id)->update($request->all());
+        $candidatoAlterado = Candidato::findOrFail($request->id)->update($request->all());
+        $candidato = Candidato::findOrFail($request->id);
+        //doc upload
+        if($request->hasfile('curriculo') && $request->file('curriculo')->isValid()){
+
+            $requestDoc = $request->curriculo;
+
+            $extension = $requestDoc->extension();
+
+
+            $docName = md5($requestDoc->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestDoc->move(public_path('images/curriculos'), $docName);
+
+            $candidato['curriculo'] = $docName;
+        }
+
+        $candidato->update([
+            'curriculo' => $candidato['curriculo']
+        ]);
+
+        
+
         return redirect('/')->with('msg','Candidato editado com sucesso!');
     }
 
